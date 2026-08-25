@@ -10,9 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_24_153357) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_25_093752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "data_analyzers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "game_stat"
+    t.bigint "opening_id", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["opening_id"], name: "index_data_analyzers_on_opening_id"
+    t.index ["user_id"], name: "index_data_analyzers_on_user_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.string "result"
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.string "user_opening"
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "openings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "image"
+    t.string "name"
+    t.datetime "updated_at", null: false
+    t.string "video_url"
+  end
 
   create_table "solid_cable_messages", force: :cascade do |t|
     t.binary "channel", null: false
@@ -197,6 +226,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_24_153357) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "data_analyzers", "openings"
+  add_foreign_key "data_analyzers", "users"
+  add_foreign_key "games", "users"
   add_foreign_key "solid_queue_batch_executions", "solid_queue_batches", column: "batch_id", on_delete: :cascade
   add_foreign_key "solid_queue_batch_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
