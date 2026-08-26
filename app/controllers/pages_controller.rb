@@ -19,10 +19,12 @@ class PagesController < ApplicationController
   def analyse
     username = params[:username]
 
-    games = Game.fetch_from_chess_com(username)
+    games = Game.fetch_from_chess_com(username, 50)
+    elo = Game.player_elo(username)
+    winrate = Game.win_rates(games, username)
 
     analyzer = DataAnalyzer.new
-    result = analyzer.call(games)
+    result = analyzer.call(games, elo, winrate)
 
     @analysis = result
   end
