@@ -1,0 +1,17 @@
+@import "dash_bot";
+@import "dash_top";
+
+$card-bg: #ffffff;
+$dark-card-bg: #13182a;
+$primary-text: #1a1a1a;
+$secondary-text: #6b7280;
+$accent-gold: #f59e0b;
+$border-color: #e5e7eb;
+
+.dashboard {
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 2rem;
+  color: $primary-text;
+  max-width: 1200px;
+  margin: 0 auto;
+}
