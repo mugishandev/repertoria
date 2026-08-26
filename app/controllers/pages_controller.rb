@@ -17,9 +17,18 @@ class PagesController < ApplicationController
   end
 
   def analyse
-    username = params[:username]
-
+    username = params[:username].strip.downcase
     games = Game.fetch_from_chess_com(username, 50)
+    if games.empty?
+      redirect_to root_path,
+      alert: "Le joueur « #{username} » n'existe pas sur Chess.com."
+      return
+    end
+    if games.count < 10
+      redirect_to root_path,
+        alert: "Vous devez jouer au moins 10 parties pour lancer l'analyse"
+      return
+    end
     elo = Game.player_elo(username)
     winrate = Game.win_rates(games, username)
 
