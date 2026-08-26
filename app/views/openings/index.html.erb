@@ -1,20 +1,40 @@
 <div class="dashboard">
-  <div class="dash-top">
-    <div class="dash-profil">
-      <div class="dash-profil-logo">
-
-      </div>
-      <div class="dash-profil-info">
-        <div class="dash-profil-analyse">
+  <div class="dash-top ">
+      <div class="dash-profil">
+        <div class="dash-profil-logo">
+        </div>
+        <div class="dash-profil-info">
+          <p class="profil-info-title">Votre Profil</p>
+          <h5>Mugisha</h5>
+          <p>640 ELO - Chess.com</p>
+          <div class="dash-profil-analyse row">
+              <p>Parties analysées <strong>128</strong></p>
+              <p>Mise à jour <strong><%= @last_update.strftime("%d %B %Y %H:%M") if @last_update != nil %></strong></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="dash-stats">
-      <div class="dash-stats-blancs">
+      <div class="dash-stats">
+        <div class="dash-stats-cards">
+          <div class="stats-header">
+            <p>Avec les Blancs</p>
+            <h5 class="stat-blancs">58%</h5>
+          </div>
+          <div class="progress-container">
+            <div class="progress-fill" style="width: 58%;">
+            </div>
+          </div>
+        </div>
+        <div class="dash-stats-cards">
+          <div class="stats-header">
+            <p>Avec les Noirs</p>
+            <h5 class="stat-noirs">41%</h5>
+          </div>
+          <div class="progress-container">
+            <div class="progress-fill" style="width: 41%;">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="dash-stats-noirs">
-      </div>
-    </div>
   </div>
   <div class="dash-bot">
     <div class="dash-bot-reco">
