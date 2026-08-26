@@ -31,6 +31,7 @@ Recommande UNE ouverture par catégorie.
 Privilégie des ouvertures simples, solides et adaptées aux joueurs
 entre 300 et 1000 ELO.
 
+Ne jamais inventer l'ELO. L'ELO doit être calculé à partir des données ratings des parties fournies.
 Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 
 {
