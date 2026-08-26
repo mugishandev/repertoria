@@ -1,12 +1,121 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+$nav-bg: #13182a;
+$accent-gold: #E8B84E;
+$text-light: #ffffff;
+$text-muted: #9ca3af;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.navbar-repertoria {
+  background-color: $nav-bg !important;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // Logo de gauche
+  .navbar-brand {
+    text-decoration: none;
+    z-index: 2; // S'assure qu'il reste cliquable au-dessus du titre centré
+
+    .navbar-logo {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid rgba(232, 184, 78, 0.4);
+      border-radius: 12px;
+      background-color: rgba(232, 184, 78, 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $accent-gold;
+      font-size: 1.2rem;
+    }
+
+    .brand-title {
+      color: $text-light;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+  }
+
+// TITRE CENTRAL TRÈS GRAND ET RESPONSIVE
+  .navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    .nav-page-title {
+      // Valeurs augmentées : Min : 1.1rem | Idéal : 1.8vw | Max : 1.5rem
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: $accent-gold;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+  // Partie droite (Utilisateur)
+  .navbar-nav {
+    z-index: 2;
+
+    .user-name {
+      color: $text-light;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .user-avatar {
+      width: 38px;
+      height: 38px;
+      background-color: rgba(232, 184, 78, 0.15);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $accent-gold;
+      font-size: 1rem;
+      overflow: hidden; // Important pour rogner l'image si elle dépasse du cercle
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      // Style de l'image de profil dynamique
+      .avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // Styles du menu déroulant et du toggler mobile (gardés de la version précédente)
+  .dropdown-menu {
+    background-color: $nav-bg;
+    border: 1px solid rgba(232, 184, 78, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+
+    .dropdown-item {
+      color: $text-muted;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: rgba(232, 184, 78, 0.1);
+        color: $text-light;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+    .navbar-toggler-icon {
+      filter: invert(1) grayscale(100%);
+    }
+  }
 }
