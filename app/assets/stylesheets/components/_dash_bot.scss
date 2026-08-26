@@ -1,0 +1,164 @@
+$dark-card-bg: #13182a;
+$accent-gold: #E8B84E;
+$move-list-color: #8ba3c7;
+
+.dash-bot {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .dash-bot-reco {
+      margin-bottom: 0.5rem;
+
+      .repertory {
+        color: $move-list-color;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+      }
+
+      .reco-openings {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $dark-card-bg;
+        margin-bottom: 0.5rem;
+
+      }
+
+      .reco-text {
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.5;
+
+        a {
+          color: #8ba3c7;
+          font-weight: 600;
+          text-decoration: underline;
+          text-decoration-color: $accent-gold;
+          text-underline-offset: 3px;
+
+          &:hover {
+            opacity: 0.85;
+          }
+        }
+      }
+    }
+
+    .dash-bot-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+
+      .dash-opening-card {
+        background-color: $dark-card-bg;
+        color: #ffffff;
+        border-radius: 20px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+        }
+
+        .dash-card-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+
+          .dash-card-logo {
+            width: 40px;
+            height: 40px;
+            background-color: $accent-gold;
+            color: $dark-card-bg;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .dash-card-side {
+            font-size: 0.75rem;
+            background: rgba(232, 184, 78, 0.15);
+            color: $accent-gold;
+            border: 1px solid rgba(232, 184, 78, 0.3);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+          }
+        }
+
+        .dash-opening-desc {
+          margin-bottom: 1.5rem;
+          font-size: 0.95rem;
+          line-height: 1.5;
+          color: #d1d5db;
+
+          .opening-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+          }
+
+          .move-list {
+            color: $move-list-color;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+          }
+
+          .opening-desc {
+            color: #9ca3af;
+            text-align: justify;
+          }
+        }
+
+        .dash-opening-whento {
+          font-size: 0.85rem;
+          color: #9ca3af;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 1rem;
+
+          h4 {
+            color: $move-list-color;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+          }
+
+          .opening-desc {
+            margin-bottom: 1rem;
+            text-align: justify;
+          }
+
+          .opening-link {
+            color: $accent-gold;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
