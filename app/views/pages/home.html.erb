@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-page">
+  <div class="flou-gradient">
+    <div class="top">
+      <div class="logo">
+        <div class="logo-icon">♠</div>
+          <div class="top-title">
+            <h1>Repertoria</h1>
+            <p>RÉPERTOIRE D'OUVERTURES</p>
+          </div>
+      </div>
+    </div>
+
+    <p class="tagline">Le coach d'ouverture pour joueurs d'échecs débutants</p>
+
+    <div class="separator"></div>
+
+    <p class="quote">« Ne jouez plus au hasard. Jouez aux échecs. »</p>
+
+    <div class="separator"></div>
+
+    <div class="bottom">
+      <form action="/analyse" method="get">
+        <input type="text" name="username" placeholder="Votre pseudo Chess.com">
+        <button>Analyser mon répertoire</button>
+      </form>
+    </div>
+  </div>
+</div>
