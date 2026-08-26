@@ -4,7 +4,20 @@ $text-light: #ffffff;
 $text-muted: #9ca3af;
 
 .navbar-repertoria {
+  // --- DAMIER DE 2 CARREAUX DE HAUTEUR ---
   background-color: $nav-bg !important;
+  background-image:
+    linear-gradient(45deg, rgba(232, 184, 78, 0.04) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(232, 184, 78, 0.04) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(232, 184, 78, 0.04) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(232, 184, 78, 0.04) 75%);
+
+  // 36px de large par 36px de haut : cela va créer exactement 2 grands carreaux
+  // empilés verticalement sur toute la hauteur de la navbar !
+  background-size: 72px 72px;
+  background-position: 0 0, 0 36px, 36px -36px, -36px 0px;
+  // ----------------------------------------
+
   padding: 0.75rem 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
@@ -17,7 +30,7 @@ $text-muted: #9ca3af;
   // Logo de gauche
   .navbar-brand {
     text-decoration: none;
-    z-index: 2; // S'assure qu'il reste cliquable au-dessus du titre centré
+    z-index: 2;
 
     .navbar-logo {
       width: 40px;
@@ -40,7 +53,7 @@ $text-muted: #9ca3af;
     }
   }
 
-// TITRE CENTRAL TRÈS GRAND ET RESPONSIVE
+  // Titre central
   .navbar-center {
     position: absolute;
     left: 50%;
@@ -48,9 +61,7 @@ $text-muted: #9ca3af;
     pointer-events: none;
 
     .nav-page-title {
-      // Valeurs augmentées : Min : 1.1rem | Idéal : 1.8vw | Max : 1.5rem
       font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-
       font-weight: 700;
       letter-spacing: 0.15em;
       color: $accent-gold;
@@ -79,14 +90,13 @@ $text-muted: #9ca3af;
       align-items: center;
       color: $accent-gold;
       font-size: 1rem;
-      overflow: hidden; // Important pour rogner l'image si elle dépasse du cercle
+      overflow: hidden;
       transition: transform 0.2s ease;
 
       &:hover {
         transform: scale(1.05);
       }
 
-      // Style de l'image de profil dynamique
       .avatar-img {
         width: 100%;
         height: 100%;
@@ -95,7 +105,7 @@ $text-muted: #9ca3af;
     }
   }
 
-  // Styles du menu déroulant et du toggler mobile (gardés de la version précédente)
+  // Dropdown et Toggler
   .dropdown-menu {
     background-color: $nav-bg;
     border: 1px solid rgba(232, 184, 78, 0.2);
