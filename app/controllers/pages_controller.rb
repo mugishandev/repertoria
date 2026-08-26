@@ -35,18 +35,19 @@ class PagesController < ApplicationController
 
     if @games.empty?
       redirect_to root_path,
-        alert: "Le joueur « #{@username} » n'existe pas sur Chess.com."
+        alert: "Le joueur « #{@username} » n'existe pas sur Chess.com. Si votre compte ou vos parties sont récentes, vos données Chess.com ne sont peut-être pas encore disponibles."
       return
     end
 
     if @games.count < 10
       redirect_to root_path,
-        alert: "Vous devez jouer au moins 10 parties pour lancer l'analyse"
+        alert: "Vous devez avoir joué au moins 10 parties pour lancer l'analyse. Si votre compte ou vos parties sont récentes, vos données Chess.com ne sont peut-être pas encore disponibles."
       return
     end
 
     @elo = Game.player_elo(@username)
     @winrate = Game.win_rates(@games, @username).stringify_keys
+    @games_count = @games.count
 
     analyzer = DataAnalyzer.new
     @analysis = analyzer.call(@games, @elo, @winrate)

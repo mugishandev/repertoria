@@ -10,8 +10,8 @@
             <%= @username %>
           </h5>
           <p>
-             <%= @elo %>
              ELO - Chess.com
+             <strong><%= @elo %></strong>
           </p>
           <div class="dash-profil-analyse row">
               <p>Parties analysées
@@ -28,7 +28,7 @@
           <div class="stats-header">
             <p>Avec les Blancs</p>
             <h5 class="stat-blancs">
-              <%= @winrate["white"] %>
+              <%= @winrate["white"] %>%
             </h5>
           </div>
           <div class="progress-container">
@@ -40,7 +40,7 @@
           <div class="stats-header">
             <p>Avec les Noirs</p>
             <h5 class="stat-noirs">
-              <%= @winrate["black"] %>
+              <%= @winrate["black"] %>%
             </h5>
           </div>
           <div class="progress-container">
