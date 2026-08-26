@@ -1,0 +1,19 @@
+fr:
+  activerecord:
+    attributes:
+      user:
+        email: "Votre adresse e-mail"
+        password: "Votre mot de passe"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "doit être renseigné"
+            password:
+              blank: "doit être renseigné"
+
+  errors:
+    messages:
+      blank: "doit être renseigné"
