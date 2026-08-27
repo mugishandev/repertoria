@@ -13,7 +13,13 @@ Rails.application.routes.draw do
   get 'confidentials', to: 'pages#confidentials'
   get "/analyse", to: "pages#analyse"
 
-  resources :openings, only: [ :index, :show ]
+  resources :openings, only: [ :index, :show ] do
+    member do
+      get :description
+      get :explanation
+      get :resources
+    end
+  end
 
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)

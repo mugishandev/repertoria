@@ -1,0 +1,42 @@
+<% content_for(:page_title, "Nom de l'Ouverture") %>
+
+<div class="opening-container">
+  <div class="opening-banner">
+    <div class="opening-banner-infos">
+      <div class="dash-side">
+        <p>Avec les rouges</p>
+      </div>
+
+      <div class="opening-banner-details">
+        <div class="dash-card-logo">♠</div>
+        <div class="opening-title">
+          <h2>Titre</h2>
+          <p>Liste de coups : Haut, Haut, B</p>
+        </div>
+      </div>
+
+      <div class="opening-banner-tab">
+        <%# Onglet actif si on est sur la description OU sur la vue show de base %>
+        <%= link_to "Description", description_opening_path(@opening),
+            class: "link #{'active' if current_page?(description_opening_path(@opening)) || current_page?(opening_path(@opening))}",
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
+
+        <%= link_to "Explications", explanation_opening_path(@opening),
+            class: "link #{'active' if current_page?(explanation_opening_path(@opening))}",
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
+
+        <%= link_to "Ressources", resources_opening_path(@opening),
+            class: "link #{'active' if current_page?(resources_opening_path(@opening))}",
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
+      </div>
+    </div>
+
+    <div class="opening-link-back">
+      <%= link_to "← Retour au tableau de bord", :back %>
+    </div>
+  </div>
+
+  <div class="opening-tab-view">
+    <%= render "description" %>
+  </div>
+</div>
