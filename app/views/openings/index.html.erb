@@ -25,6 +25,7 @@
       </div>
       <div class="dash-stats">
         <div class="dash-stats-cards">
+          <p class="profil-info-title">Taux de victoire:</p>
           <div class="stats-header">
             <p>Avec les Blancs</p>
             <h5 class="stat-blancs">
@@ -63,9 +64,11 @@
         </div>
         <div class="dash-opening-desc">
           <h3 class="opening-title">
-            <%= @analysis["white"]["opening_recommanded"] %>
+            <%= @analysis["white"]["opening_recommended"] %>
           </h3>
-          <p class="move-list">1. e4 e5 2. Cf3 Cc6 3. Fc4</p>
+          <p class="move-list">
+             <%= @analysis["white"]["suite_de_coups"] %>
+          </p>
           <p class="opening-desc">
             <%= @analysis["white"]["reason"] %>
           </p>
@@ -83,9 +86,11 @@
         </div>
         <div class="dash-opening-desc">
           <h3 class="opening-title">
-            <%= @analysis["black_vs_d4"]["opening_recommanded"] %>
+            <%= @analysis["black_vs_d4"]["opening_recommended"] %>
           </h3>
-          <p class="move-list">Liste de coups</p>
+          <p class="move-list">
+            <%= @analysis["black_vs_d4"]["suite_de_coups"] %>
+          </p>
           <p class="opening-desc">
             <%= @analysis["black_vs_d4"]["reason"] %>
           </p>
@@ -103,9 +108,11 @@
         </div>
         <div class="dash-opening-desc">
           <h3 class="opening-title">
-            <%= @analysis["black_vs_e4"]["opening"] %>
+            <%= @analysis["black_vs_e4"]["opening_recommended"] %>
           </h3>
-          <p class="move-list">Liste de coups</p>
+          <p class="move-list">
+            <%= @analysis["black_vs_e4"]["suite_de_coups"] %>
+          </p>
           <p class="opening-desc">
             <%= @analysis["black_vs_e4"]["reason"] %>
           </p>
