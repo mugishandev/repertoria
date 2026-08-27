@@ -112,28 +112,33 @@ FORMAT DE RÉPONSE
 
 Retourne UNIQUEMENT un JSON valide.
 
+
+
 Utilise exactement cette structure :
 
 {
 "white": {
-"opening": "NOM_OUVERTURE",
+"opening": "NOM_OUVERTURE_UTILISE_PAR_LE_JOUEUR",
 "status": "keep|change|new",
+"opening_recommanded": "NOM_OUVERTURE_RECOMMANDEE_AU_JOUEUR",
 "reason": "Explication courte adressée directement au joueur"
 },
 
 "black_vs_e4": {
-"opening": "NOM_OUVERTURE",
+"opening": "NOM_OUVERTURE_UTILISE_PAR_LE_JOUEUR",
 "status": "keep|change|new",
+"opening_recommanded": "NOM_OUVERTURE_RECOMMANDEE_AU_JOUEUR",
 "reason": "Explication courte adressée directement au joueur"
 },
 
 "black_vs_d4": {
-"opening": "NOM_OUVERTURE",
+"opening": "NOM_OUVERTURE_UTILISE_PAR_LE_JOUEUR",
 "status": "keep|change|new",
+"opening_recommanded": "NOM_OUVERTURE_RECOMMANDEE_AU_JOUEUR",
 "reason": "Explication courte adressée directement au joueur"
 }
 }
-
+Les NOM_OUVERTURE doivent simplement être les noms d'une ouverture à chaque fois
 Ne retourne aucun texte avant ou après le JSON.
 }
 

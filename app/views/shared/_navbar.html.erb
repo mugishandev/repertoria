@@ -2,7 +2,7 @@
   <div class="container-fluid">
 
     <!-- 1. SECTION GAUCHE : Logo + Nom de l'app -->
-    <%= link_to openings_path, class: "navbar-brand d-flex align-items-center gap-2" do %>
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center gap-2" do %>
       <div class="navbar-logo">
         <span class="logo-icon">♟</span>
       </div>
@@ -27,7 +27,6 @@
       <ul class="navbar-nav align-items-center ms-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown d-flex align-items-center gap-2">
-            <span class="user-name">Sevmaxxisha</span>
 
             <a href="#" class="avatar-link" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="user-avatar">
@@ -44,7 +43,8 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Se connecter", new_user_session_path, data: { turbo: false } %>
+            <%= link_to "S'inscrire", new_user_registration_path %>
           </li>
         <% end %>
       </ul>

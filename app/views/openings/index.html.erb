@@ -6,11 +6,20 @@
         </div>
         <div class="dash-profil-info">
           <p class="profil-info-title">Votre Profil</p>
-          <h5>Mugisha</h5>
-          <p>640 ELO - Chess.com</p>
+          <h5>
+            <%= @username %>
+          </h5>
+          <p>
+             ELO - Chess.com
+             <strong><%= @elo %></strong>
+          </p>
           <div class="dash-profil-analyse row">
-              <p>Parties analysées <strong>128</strong></p>
-              <p>Mise à jour <strong><%= @last_update.strftime("%d %B %Y %H:%M") if @last_update != nil %></strong></p>
+              <p>Parties analysées
+                <strong>
+                  <%= @games_count %>
+                </strong>
+              </p>
+              <p>Mise à jour <strong><%= @last_update.strftime("%d %B %Y %H:%M") if @last_update.present? %></strong></p>
           </div>
         </div>
       </div>
@@ -18,7 +27,9 @@
         <div class="dash-stats-cards">
           <div class="stats-header">
             <p>Avec les Blancs</p>
-            <h5 class="stat-blancs">58%</h5>
+            <h5 class="stat-blancs">
+              <%= @winrate["white"] %>%
+            </h5>
           </div>
           <div class="progress-container">
             <div class="progress-fill" style="width: 58%;">
@@ -28,7 +39,9 @@
         <div class="dash-stats-cards">
           <div class="stats-header">
             <p>Avec les Noirs</p>
-            <h5 class="stat-noirs">41%</h5>
+            <h5 class="stat-noirs">
+              <%= @winrate["black"] %>%
+            </h5>
           </div>
           <div class="progress-container">
             <div class="progress-fill" style="width: 41%;">
@@ -50,13 +63,17 @@
           <div class="dash-card-side">Avec les blancs</div>
         </div>
         <div class="dash-opening-desc">
-          <h3 class="opening-title">L'Italienne</h3>
+          <h3 class="opening-title">
+            <%= @analysis["white"]["opening_recommanded"] %>
+          </h3>
           <p class="move-list">1. e4 e5 2. Cf3 Cc6 3. Fc4</p>
-          <p class="opening-desc">Une ouverture claire : on occupe le centre, on développe vite et on vise la case f7.</p>
+          <p class="opening-desc">
+            <%= @analysis["white"]["reason"] %>
+          </p>
         </div>
         <div class="dash-opening-whento">
           <h4>QUAND LA JOUER</h4>
-          <p class="opening-desc">Description de l'ouverture.</p>
+          <p class="opening-desc">Joue cette ouverture quand tu joues les blancs. Tu pourras travailler une autre ouverture blanche quand tu maîtrisera celle-ci!</p>
           <a href="" class="opening-link">Voir la fiche →</a>
         </div>
       </div>
@@ -66,13 +83,17 @@
           <div class="dash-card-side">Avec les noirs</div>
         </div>
         <div class="dash-opening-desc">
-          <h3 class="opening-title">Titre</h3>
+          <h3 class="opening-title">
+            <%= @analysis["black_vs_d4"]["opening_recommanded"] %>
+          </h3>
           <p class="move-list">Liste de coups</p>
-          <p class="opening-desc">Description de l'ouverture.</p>
+          <p class="opening-desc">
+            <%= @analysis["black_vs_d4"]["reason"] %>
+          </p>
         </div>
         <div class="dash-opening-whento">
           <h4>QUAND LA JOUER</h4>
-          <p class="opening-desc">Description de l'ouverture.</p>
+          <p class="opening-desc">Quand ton adversaire joue d4, cette variante est parfaite pour ton niveau!</p>
           <a href="" class="opening-link">Voir la fiche →</a>
         </div>
       </div>
@@ -82,13 +103,19 @@
           <div class="dash-card-side">Avec les noirs</div>
         </div>
         <div class="dash-opening-desc">
-          <h3 class="opening-title">Titre</h3>
+          <h3 class="opening-title">
+            <%= @analysis["black_vs_e4"]["opening"] %>
+          </h3>
           <p class="move-list">Liste de coups</p>
-          <p class="opening-desc">Description de l'ouverture.</p>
+          <p class="opening-desc">
+            <%= @analysis["black_vs_e4"]["reason"] %>
+          </p>
         </div>
         <div class="dash-opening-whento">
           <h4>QUAND LA JOUER</h4>
-          <p class="opening-desc">Description de l'ouverture.</p>
+          <p class="opening-desc">
+            Quand ton adversaire joue e4, cette variante est parfaite pour ton niveau!
+          </p>
           <a href="" class="opening-link">Voir la fiche →</a>
         </div>
       </div>
