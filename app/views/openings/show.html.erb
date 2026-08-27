@@ -16,34 +16,27 @@
       </div>
 
       <div class="opening-banner-tab">
+        <%# Onglet actif si on est sur la description OU sur la vue show de base %>
         <%= link_to "Description", description_opening_path(@opening),
-            class: "link #{'active' if current_page?(description_opening_path(@opening))}",
-            data: { turbo_frame: "opening_tab_content" } %>
+            class: "link #{'active' if current_page?(description_opening_path(@opening)) || current_page?(opening_path(@opening))}",
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
 
         <%= link_to "Explications", explanation_opening_path(@opening),
             class: "link #{'active' if current_page?(explanation_opening_path(@opening))}",
-            data: { turbo_frame: "opening_tab_content" } %>
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
 
         <%= link_to "Ressources", resources_opening_path(@opening),
             class: "link #{'active' if current_page?(resources_opening_path(@opening))}",
-            data: { turbo_frame: "opening_tab_content" } %>
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
       </div>
     </div>
 
     <div class="opening-link-back">
-      <%= link_to "← Retour", :back %>
+      <%= link_to "← Retour au tableau de bord", :back %>
     </div>
   </div>
 
-  <!-- <div class="opening-tab-view"> -->
-
-    <!-- <turbo-frame id="opening_content"> -->
-      <%#= render "openings/description", opening: @opening %>
-      <!-- contenu par défaut ou vide -->
-    <!-- </turbo-frame> -->
-
-  <!-- </div> -->
   <div class="opening-tab-view">
-    <%= render "tab_content" %>
+    <%= render "description" %>
   </div>
 </div>

@@ -1,91 +1,136 @@
-$dark-bg: #13182a;
-$primary-text: #1a1a1a;
-$secondary-text: #6b7280;
+// Variables
+$dark-card-bg: #13182a;
 $accent-gold: #E8B84E;
-$border-color: #e5e7eb;
+$primary-text: #ffffff;
+$secondary-text: #9ca3af;
+$border-subtle: rgba(255, 255, 255, 0.1);
+
+.opening-container {
+  width: 100%;
+}
 
 .opening-banner {
-  background-color: $dark-bg;
+  background-color: $dark-card-bg;
+  padding: 1.5rem 2rem 0 2rem;
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 2rem 0 2rem;
-}
+  align-items: flex-start;
 
-.dash-side {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: $accent-gold;
-  border: 1.5px solid $accent-gold;
-  padding: 0.35rem 0.75rem;
-  border-radius: 20px;
-  width: fit-content;
-  height: fit-content;
-  align-items: center;
-  display: inline-flex;
-
-  p {
-    margin: 0;
-    line-height: 1;
-  }
-}
-
-.opening-banner-details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.dash-card-logo {
-  width: 40px;
-  height: 40px;
-  background-color: $accent-gold;
-  color: $dark-card-bg;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-
-  img {
+  .opening-banner-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
-}
 
-.opening-title {
-  align-items: center;
-}
-
-
-.opening-banner-tab {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-evenly;
-  padding-bottom: 0.3em;
-  margin-bottom: 0.3em;
-
-
-}
-
-.opening-tab-description {
-  text-decoration: none;
-
-}
-
-.link {
-  text-decoration: none;
-  color: lightgrey;
-  padding-bottom: 0.3em;
-  margin-bottom: 0.3em;
-
-  &:active {
+  // --- Badge ("Avec les rouges") ---
+  .dash-side {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-size: 0.8rem;
+    font-weight: bold;
     color: $accent-gold;
-    border-bottom: solid 2px $accent-gold;
+    border: 2px solid $accent-gold;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+
+    p {
+      margin: 0;
+      line-height: 1;
+    }
   }
 
-  &:hover {
-    color: white;
+  // --- Bloc Titre + Logo ---
+  .opening-banner-details {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    .dash-card-logo {
+      width: 54px;
+      height: 54px;
+      background-color: $accent-gold;
+      color: $dark-card-bg;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .opening-title {
+      h2 {
+        color: $primary-text;
+        font-size: 2rem;
+        font-family: "Georgia", serif;
+        font-weight: 500;
+        margin: 0 0 0.25rem 0;
+        line-height: 1.1;
+      }
+
+      p {
+        color: $secondary-text;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
   }
+
+  // --- Système d'onglets (Bas de la bannière) ---
+  .opening-banner-tab {
+    display: flex;
+    gap: 2.5rem;
+    border-bottom: 1px solid $border-subtle;
+    margin-top: 0.5rem;
+
+    .link {
+      text-decoration: none;
+      color: $secondary-text;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid transparent; // Évite les saut de layout
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $primary-text;
+      }
+
+      // Onglet sélectionné
+      &.active {
+        color: $accent-gold;
+        border-bottom-color: $accent-gold;
+      }
+    }
+  }
+
+  // --- Bouton "← Retour" ---
+  .opening-link-back {
+    a {
+      color: $secondary-text;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $primary-text;
+      }
+    }
+  }
+}
+
+// Zone de vue sous la bannière
+.opening-tab-view {
+  padding: 2rem;
 }
