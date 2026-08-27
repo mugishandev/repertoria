@@ -16,17 +16,17 @@
       </div>
 
       <div class="opening-banner-tab">
-        <div class="opening-tab-description">
-          <%= link_to "Description", description_opening_path(@opening), data: { turbo_frame: "opening_tab_content" } %>
-        </div>
+        <%= link_to "Description", description_opening_path(@opening),
+            class: "link #{'active' if current_page?(description_opening_path(@opening))}",
+            data: { turbo_frame: "opening_tab_content" } %>
 
-        <div class="opening-tab-explanation">
-          <%= link_to "Explications", explanation_opening_path(@opening), data: { turbo_frame: "opening_tab_content" } %>
-        </div>
+        <%= link_to "Explications", explanation_opening_path(@opening),
+            class: "link #{'active' if current_page?(explanation_opening_path(@opening))}",
+            data: { turbo_frame: "opening_tab_content" } %>
 
-        <div class="opening-tab-resources">
-          <%= link_to "Ressources", resources_opening_path(@opening), data: { turbo_frame: "opening_tab_content" } %>
-        </div>
+        <%= link_to "Ressources", resources_opening_path(@opening),
+            class: "link #{'active' if current_page?(resources_opening_path(@opening))}",
+            data: { turbo_frame: "opening_tab_content" } %>
       </div>
     </div>
 

@@ -1,0 +1,91 @@
+$dark-bg: #13182a;
+$primary-text: #1a1a1a;
+$secondary-text: #6b7280;
+$accent-gold: #E8B84E;
+$border-color: #e5e7eb;
+
+.opening-banner {
+  background-color: $dark-bg;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 0 2rem;
+}
+
+.dash-side {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $accent-gold;
+  border: 1.5px solid $accent-gold;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  display: inline-flex;
+
+  p {
+    margin: 0;
+    line-height: 1;
+  }
+}
+
+.opening-banner-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dash-card-logo {
+  width: 40px;
+  height: 40px;
+  background-color: $accent-gold;
+  color: $dark-card-bg;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.opening-title {
+  align-items: center;
+}
+
+
+.opening-banner-tab {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.3em;
+
+
+}
+
+.opening-tab-description {
+  text-decoration: none;
+
+}
+
+.link {
+  text-decoration: none;
+  color: lightgrey;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.3em;
+
+  &:active {
+    color: $accent-gold;
+    border-bottom: solid 2px $accent-gold;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
