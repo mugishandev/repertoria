@@ -1,0 +1,49 @@
+<% content_for(:page_title, "Nom de l'Ouverture") %>
+
+<div class="opening-container">
+  <div class="opening-banner">
+    <div class="opening-banner-infos">
+      <div class="dash-side">
+        <p>Avec les rouges</p>
+      </div>
+
+      <div class="opening-banner-details">
+        <div class="dash-card-logo">♠</div>
+        <div class="opening-title">
+          <h2>Titre</h2>
+          <p>Liste de coups : Haut, Haut, B</p>
+        </div>
+      </div>
+
+      <div class="opening-banner-tab">
+        <div class="opening-tab-description">
+          <%= link_to "Description", description_opening_path(@opening), data: { turbo_frame: "opening_tab_content" } %>
+        </div>
+
+        <div class="opening-tab-explanation">
+          <%= link_to "Explications", explanation_opening_path(@opening), data: { turbo_frame: "opening_tab_content" } %>
+        </div>
+
+        <div class="opening-tab-resources">
+          <%= link_to "Ressources", resources_opening_path(@opening), data: { turbo_frame: "opening_tab_content" } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="opening-link-back">
+      <%= link_to "← Retour", :back %>
+    </div>
+  </div>
+
+  <!-- <div class="opening-tab-view"> -->
+
+    <!-- <turbo-frame id="opening_content"> -->
+      <%#= render "openings/description", opening: @opening %>
+      <!-- contenu par défaut ou vide -->
+    <!-- </turbo-frame> -->
+
+  <!-- </div> -->
+  <div class="opening-tab-view">
+    <%= render "tab_content" %>
+  </div>
+</div>
