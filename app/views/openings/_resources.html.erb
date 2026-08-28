@@ -2,6 +2,11 @@
   <div class="tab-pane">
     <h3>Ressources Externes</h3>
     <!-- <p><%#= @opening.resources %></p> -->
+    <% if @opening.video_url.present? %>
+      <%= link_to @opening.video_url, target: "_blank", rel: "noopener" do %>
+        <%= image_tag "https://img.youtube.com/vi/#{@opening.video_url.split("v=").last}/hqdefault.jpg" %>
+      <% end %>
+    <% end %>
     <div class="resources-container">
       <div class="resources-desc">
         <h2>Titre</h2>
