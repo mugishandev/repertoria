@@ -86,4 +86,6 @@ class Game < ApplicationRecord
         (black_wins.to_f / black_games.count * 100).round(2) : 0
     }
   end
+
+  
 end
