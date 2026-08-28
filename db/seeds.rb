@@ -7,6 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Opening.destroy_all
+puts "seeding openings..."
+
 
 openings = [
   { name: "L'Italienne", suite_de_coups: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d3 Nf6 5.O-O O-O 6.Re1", color: "white", against: nil, video_url: "https://www.youtube.com/watch?v=5Ny8I1Bj-ek", image: "board_italienne.png" },
@@ -23,3 +26,4 @@ openings = [
 openings.each do |opening|
   Opening.create!(opening)
 end
+ puts "Seeded #{Opening.count} openings."
