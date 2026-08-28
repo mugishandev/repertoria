@@ -1,6 +1,7 @@
 $breakpoint-desktop-split: 1084px;
 $breakpoint-mobile: 600px;
 $accent-gold: #E8B84E;
+$dark-card-bg: #13182a;
 
 .tab-pane {
   background-color: #F6F4EE;
@@ -88,7 +89,7 @@ $accent-gold: #E8B84E;
       }
 
       .badge {
-        background-color: #1A1F36;
+        background-color: $dark-card-bg;
         color: $accent-gold;
         font-size: 0.75rem;
         padding: 0.2rem 0.5rem;
@@ -187,7 +188,7 @@ $accent-gold: #E8B84E;
     }
   }
 }
+
 .label-title {
-      
-      text-transform: uppercase;
-    }
+  text-transform: uppercase;
+}
