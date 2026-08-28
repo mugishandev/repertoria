@@ -7,7 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
 openings = [
   { name: "L'Italienne", suite_de_coups: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d3 Nf6 5.O-O O-O 6.Re1", color: "white", against: nil, video_url: "https://www.youtube.com/watch?v=5Ny8I1Bj-ek", image: "board_italienne.png" },
   { name: "L'Écossaise", suite_de_coups: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Nxc6 bxc6 6.Bd3", color: "white", against: nil, video_url: "https://www.youtube.com/watch?v=nWWe_byE3gM", image: "board_ecossaise.png" },
