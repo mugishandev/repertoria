@@ -1,17 +1,23 @@
-<% content_for(:page_title, "Nom de l'Ouverture") %>
+<% content_for(:page_title, "Ouverture") %>
 
 <div class="opening-container">
   <div class="opening-banner">
     <div class="opening-banner-infos">
       <div class="dash-side">
-        <p>Avec les rouges</p>
+        <p> Avec les
+          <%= @opening.color_fr %>
+        </p>
       </div>
 
       <div class="opening-banner-details">
         <div class="dash-card-logo">♠</div>
         <div class="opening-title">
-          <h2>Titre</h2>
-          <p>Liste de coups : Haut, Haut, B</p>
+          <h2>
+            <%= @opening.name %>
+          </h2>
+          <p> Suite de coups:
+            <%= @opening.suite_de_coups %>
+          </p>
         </div>
       </div>
 
