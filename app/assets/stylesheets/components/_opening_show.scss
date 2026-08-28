@@ -10,6 +10,7 @@ $border-subtle: rgba(255, 255, 255, 0.1);
 }
 
 .opening-banner {
+  // Fond en dégradé vertical : opaque en haut, légèrement transparent en bas
   background-color: $dark-card-bg;
   padding: 1.5rem 2rem 0 2rem;
   display: flex;
@@ -23,7 +24,6 @@ $border-subtle: rgba(255, 255, 255, 0.1);
     width: 100%;
   }
 
-  // --- Badge ("Avec les rouges") ---
   .dash-side {
     display: inline-flex;
     align-items: center;
