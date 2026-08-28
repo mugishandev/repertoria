@@ -1,0 +1,194 @@
+$breakpoint-desktop-split: 1084px;
+$breakpoint-mobile: 600px;
+$accent-gold: #E8B84E;
+$dark-card-bg: #13182a;
+
+.tab-pane {
+  background-color: #F6F4EE;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #2C3E50;
+  padding: 2rem;
+
+  @media (max-width: $breakpoint-desktop-split) {
+    padding: 1.25rem;
+  }
+}
+
+.description-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* Bascule en colonne dès qu'on passe sous 1084px (ex: écran scindé en deux) */
+  @media (max-width: $breakpoint-desktop-split) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.description-details {
+  flex: 1.4;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: justify;
+
+  @media (max-width: $breakpoint-desktop-split) {
+    padding: 2rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.25rem;
+    }
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+    .description-var {
+    background-color: #F8F7F4;
+    border: 1px solid #D5D8DC;
+    border-radius: 12px;
+    margin-top: 0.75rem;
+    overflow: hidden; // Évite les débordements pendant l'animation
+
+    &-header {
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+
+      p {
+        margin: 0;
+        font-family: Georgia, serif;
+        font-weight: 500;
+      }
+
+      .badge {
+        background-color: $dark-card-bg;
+        color: $accent-gold;
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+        margin-left: 0.5rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      .chevron {
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #7F8C8D;
+        border-bottom: 2px solid #7F8C8D;
+        transform: rotate(45deg);
+        transition: transform 0.3s ease;
+
+        &.is-rotated {
+          transform: rotate(-135deg); // Fait tourner la flèche vers le haut
+        }
+      }
+    }
+
+    &-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), opacity 0.2s ease;
+
+      .inner-padding {
+        padding: 0 1.25rem 1.25rem 1.25rem;
+        color: #555;
+        font-size: 0.9rem;
+      }
+
+      &.is-open {
+        max-height: 500px; // Hauteur max arbitraire pour l'animation
+        opacity: 1;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+      }
+    }
+  }
+}
+
+.description-side {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .description-whento {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+    }
+  }
+
+  .description-start-position {
+    background-color: #1A1F36;
+    border-radius: 20px;
+    padding: 1.75rem;
+    color: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 1.25rem;
+      border-radius: 16px;
+    }
+
+    .chessboard-wrapper {
+      display: flex;
+      justify-content: center; // Centrage horizontal
+      align-items: center;     // Centrage vertical
+      width: 100%;
+      height: 100%;            // Nécessaire si le parent a une hauteur définie
+    }
+
+    .board-preview {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .label-title {
+      color: $accent-gold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.label-title {
+  text-transform: uppercase;
+}

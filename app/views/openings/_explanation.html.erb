@@ -1,7 +1,27 @@
 <%= turbo_frame_tag "opening_tab_content" do %>
   <div class="tab-pane">
-    <h3>Explications</h3>
     <!-- <p><%#= @opening.explanation %></p> -->
-    <p>Ceci est un test, s'il s'affiche, nous sommes riches.</p>
+    <div class="explanation-container">
+      <div class="explanation-desc">
+        <h2>Coup par coup</h2>
+        <p>Suivez les diagrammes dans l'ordre pour retenir la construction de l'ouverture.</p>
+      </div>
+      <div class="explanation-cards">
+        <div class="explanation-card">
+          <div class="explanation-card-top">
+            <div class="explanation-card-move-name">
+              <p>Nom Mouvement</p>
+            </div>
+            <div class="explanation-card-step">
+              <p>1/5</p>
+            </div>
+          </div>
+          <div class="explanation-card-img">♦</div>
+          <div class="explanation-card-move">
+            <p>Du texte !!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>

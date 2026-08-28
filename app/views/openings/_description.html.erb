@@ -1,6 +1,81 @@
 <%= turbo_frame_tag "opening_tab_content" do %>
   <div class="tab-pane">
-    <h3>Description</h3>
-    <p>Ceci est un test, s'il s'affiche, nous sommes riches.</p>
+
+      <div class="description-container">
+
+        <!-- Colonne Gauche -->
+        <div class="description-details">
+          <h2>Ce que vous jouez</h2>
+          <p>Insérer ICI la description de l'ouverture.</p>
+          <p>[Placeholder]L'Italienne commence par 1. e4 e5 2. Cf3 Cc6 3. Fc4. Les Blancs prennent leur part du centre avec le pion e4, attaquent immédiatement le pion e5 avec le Cavalier en f3, puis sortent le Fou en c4.
+
+          L'idée est simple à retenir : trois coups, trois objectifs. Un pion au centre, une pièce développée qui met la pression, et un Fou placé sur une grande diagonale. Vous pourrez ensuite jouer le petit roque très rapidement.
+
+          Depuis c4, le Fou regarde la case f7. En début de partie, f7 n'est défendue que par le Roi noir : c'est donc le point le plus sensible du camp adverse, et beaucoup d'erreurs de débutants viennent de là.</p>
+          <p><%= @opening.description %></p>
+
+          <h2>Les deux variantes principales à connaître</h2>
+
+          <div class="description-var" data-controller="accordion">
+            <!-- En-tête cliquable -->
+            <div class="description-var-header" data-action="click->accordion#toggle">
+              <p>
+                Le Giuoco Piano
+                <span class="badge">3... Fc5</span>
+              </p>
+              <div class="chevron" data-accordion-target="icon"></div>
+            </div>
+
+            <!-- Contenu masqué par défaut -->
+            <div class="description-var-content" data-accordion-target="content">
+              <div class="inner-padding">
+                <p>Les Noirs imitent votre développement. La partie reste calme et équilibrée : continuez avec d3, c3 puis le roque, sans chercher un coup spectaculaire.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="description-var" data-controller="accordion">
+            <!-- En-tête cliquable -->
+            <div class="description-var-header" data-action="click->accordion#toggle">
+              <p>
+                La défense des deux cavaliers
+                <span class="badge">3... Cf6</span>
+              </p>
+              <div class="chevron" data-accordion-target="icon"></div>
+            </div>
+
+            <!-- Contenu masqué par défaut -->
+            <div class="description-var-content" data-accordion-target="content">
+              <div class="inner-padding">
+                <p>Les Noirs développent leur second Cavalier et attaquent votre pion e4. Le coup le plus sain à votre niveau est d3, qui protège e4 et garde une position solide.</p>
+              </div>
+            </div>
+          </div>
+
+        <!-- Colonne Droite -->
+      </div>
+        <div class="description-side">
+          <div class="description-whento">
+            <div class="label-title">
+              <h5>Quand la jouer</h5>
+            </div>
+            <p>À jouer dès que vous commencez la partie avec les Blancs.</p>
+          </div>
+
+          <div class="description-start-position">
+            <div class="label-title">
+              <h5>Position de départ visée</h5>
+            </div>
+
+            <!-- Ton composant d'échiquier ici -->
+            <div class="chessboard-wrapper">
+              <%= image_tag @opening.image %>
+            </div>
+
+            <p class="caption">Position après 3. Fc4.</p>
+          </div>
+        </div>
+
+    </div>
   </div>
 <% end %>
