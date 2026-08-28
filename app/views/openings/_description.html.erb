@@ -1,7 +1,22 @@
 <%= turbo_frame_tag "opening_tab_content" do %>
   <div class="tab-pane">
-    <h3>Description</h3>
     <p><%= @opening.description %></p>
-    <p>Ceci est un test, s'il s'affiche, nous sommes riches.</p>
+    <div class="description-container">
+      <div class="description-details">
+        <p>Du texte.</p>
+        <div class="description-var1">
+          <p>Dropdown</p>
+        </div>
+        <div class="description-var2">
+          <p>Dropdown</p>
+        </div>
+      </div>
+      <div class="description-side">
+        <div class="description-whento">
+          <p>TEXT</p>
+        </div>
+        <div class="description-start-position">♠</div>
+      </div>
+    </div>
   </div>
 <% end %>
