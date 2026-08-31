@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'legals', to: 'pages#legals'
   get 'cgu', to: 'pages#cgu'
   get 'confidentials', to: 'pages#confidentials'
+  get "/analyse", to: "pages#analyse"
   get "/repertoire", to: "pages#repertoire"
 
   resources :openings, only: [ :index, :show ] do
