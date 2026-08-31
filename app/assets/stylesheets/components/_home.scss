@@ -64,7 +64,9 @@ $accent-gold: #E8B84E;
   margin: 5px 0 0;
   color: #151936;
   font-size: 35px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
+  font-family: Garamond, serif;
+  text-transform: uppercase;
 }
 
 .logo p {
@@ -75,9 +77,10 @@ $accent-gold: #E8B84E;
 }
 
 .tagline {
-  margin-top: 90px;
+  margin-top: 4em;
   color: #52627a;
   font-size: 18px;
+  margin-bottom: 1.5rem;
 }
 
 .separator {
@@ -89,9 +92,9 @@ $accent-gold: #E8B84E;
 }
 
 .quote {
-  font-family: Georgia, serif;
+  font-family: Garamond, serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 26px;
   color: #263653;
   border-top: 3px solid $accent-gold;
   border-bottom: 3px solid $accent-gold;
@@ -101,6 +104,7 @@ $accent-gold: #E8B84E;
 .bottom form {
   display: flex;
   gap: 12px;
+  margin-top: 1em;
 }
 
 .bottom input,
@@ -120,6 +124,7 @@ $accent-gold: #E8B84E;
   border: none;
   background: $accent-gold;
   font-weight: bold;
+  color: $dark-card-bg;
 }
 
 .disclaimer {

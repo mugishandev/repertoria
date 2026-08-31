@@ -5,7 +5,7 @@ $dark-card-bg: #13182a;
 
 .tab-pane {
   background-color: #F6F4EE;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   color: #2C3E50;
   padding: 2rem;
 
@@ -48,9 +48,10 @@ $dark-card-bg: #13182a;
   }
 
   h2 {
-    font-family: Georgia, serif;
+    font-family: Garamond, serif;
     font-size: 1.5rem;
     margin-bottom: 1.25rem;
+    font-weight: 600;
 
     @media (max-width: $breakpoint-mobile) {
       font-size: 1.25rem;
@@ -58,9 +59,10 @@ $dark-card-bg: #13182a;
   }
 
   p {
+    font-family: "Didact Gothic", sans-serif;
     line-height: 1.6;
     margin-bottom: 1.25rem;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 
     &:last-child {
       margin-bottom: 0;
@@ -86,6 +88,7 @@ $dark-card-bg: #13182a;
         margin: 0;
         font-family: Georgia, serif;
         font-weight: 500;
+        font-family: "Didact Gothic", sans-serif;
       }
 
       .badge {
@@ -95,7 +98,7 @@ $dark-card-bg: #13182a;
         padding: 0.2rem 0.5rem;
         border-radius: 10px;
         margin-left: 0.5rem;
-        font-family: system-ui, sans-serif;
+        font-family: "Didact Gothic", sans-serif;
       }
 
       .chevron {
@@ -146,6 +149,8 @@ $dark-card-bg: #13182a;
     border-radius: 20px;
     padding: 1.5rem 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    font-family: "Didact Gothic", sans-serif;
+    font-size: 1.1rem;
 
     @media (max-width: $breakpoint-mobile) {
       padding: 1.25rem 1.5rem;
@@ -191,4 +196,5 @@ $dark-card-bg: #13182a;
 
 .label-title {
   text-transform: uppercase;
+  font-family: "Didact Gothic", sans-serif;
 }

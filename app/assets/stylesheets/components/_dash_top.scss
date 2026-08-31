@@ -1,10 +1,10 @@
 .dash-top {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: start;
   background-color: #fff;
   border-width: 1px;
-  margin: 36px;
+  margin-bottom: 2em;
   border-radius: 2rem;
   padding: 1rem;
   box-shadow: -2px 0 10px rgba(0,0,0,0.2);
@@ -20,17 +20,18 @@
 }
 
 .dash-profil-logo {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background-color: #f2d38c;
-  margin-right: 2rem;
+  background-color: $accent-gold;
+  margin-right: 1rem;
   align-items: center;
+  padding: 1px;
 }
 
 .profil-info-title {
   margin: 0;
-  color: #6b7285;
+  color: $gray-text;
   text-transform: uppercase;
   font-size: small;
   letter-spacing: .16em;
@@ -41,17 +42,20 @@
 }
 
 .dash-profil-info h5 {
-  color: #1a1f3a;
+  color: $dark-card-bg;
   margin: 0;
+  font-family: Garamond, serif;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .dash-profil-info p {
-  color: #6b7285;
+  color: $gray-text;
   margin: 0;
 }
 
 strong {
-  color: #1a1f3a;
+  color: $dark-card-bg;
 }
 
 .dash-profil-analyse {
@@ -60,10 +64,17 @@ strong {
 
 .dash-stats {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
 }
 
 .dash-stats-cards {
+  display: flex;
+  gap: 1rem;
+}
+
+.dash-stats-card {
   display: flex;
 }
 
@@ -73,7 +84,7 @@ strong {
 }
 
 .stats-header p {
-  color: #6b7285;
+  color: $gray-text;
   margin: 0;
 }
 
@@ -103,7 +114,7 @@ strong {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-bottom: solid 2px #6b7285;
+    border-bottom: solid 2px $gray-text;
     border-right: none;
     padding-bottom: 1rem;
      border-right: none;
