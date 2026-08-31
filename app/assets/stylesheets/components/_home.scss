@@ -1,3 +1,5 @@
+$accent-gold: #E8B84E;
+
 .home-page {
   display: flex;
   min-height: 100vh;
@@ -44,17 +46,17 @@
 
 .logo-icon {
   width: 95px;
-  height: 85px;
+  height: 95px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 3px solid #e8b63e;
+  border: 3px solid $accent-gold;
   border-radius: 25px;
 
   background: #151936;
-  color: #e8b63e;
+  color: $accent-gold;
   font-size: 45px;
 }
 
@@ -83,7 +85,7 @@
   color: #52627a;
   font-size: 18px;
 
-  background: #e8b63e;
+  background: $accent-gold;
 }
 
 .quote {
@@ -91,8 +93,8 @@
   font-style: italic;
   font-size: 20px;
   color: #263653;
-  border-top: 3px solid #e8b63e;
-  border-bottom: 3px solid #e8b63e;
+  border-top: 3px solid $accent-gold;
+  border-bottom: 3px solid $accent-gold;
   padding: 20px;
 }
 
@@ -116,7 +118,7 @@
 .bottom button {
   width: 205px;
   border: none;
-  background: #edba43;
+  background: $accent-gold;
   font-weight: bold;
 }
 
