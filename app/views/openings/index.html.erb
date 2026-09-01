@@ -14,13 +14,13 @@
              ELO - Chess.com
              <strong><%= @elo %></strong>
           </p>
-          <div class="dash-profil-analyse row">
+          <div class="dash-profil-analyse">
               <p>Parties analysées
                 <strong>
                   <%= @games_count %>
                 </strong>
               </p>
-              <p>Mise à jour <strong><%= @last_update.strftime("%d %B %Y %H:%M") if @last_update.present? %></strong></p>
+              <p>Mise à jour <strong><%= @last_update.strftime("%d %b %Y") if @last_update.present? %></strong></p>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
 
       <div class="dash-opening-card">
         <div class="dash-card-top">
-          <%= image_tag "chess_knight_icon_bleu", alt: "icone ouverture blancs", class: "dash-card-logo" %>
+          <%= image_tag "knight_bleu", alt: "icone ouverture blancs", class: "dash-card-logo" %>
           <div class="dash-card-side">Avec les Blancs</div>
         </div>
         <div class="dash-opening-desc">
@@ -76,12 +76,12 @@
           <p class="opening-desc">
             <%= @analysis["white"]["reason"] %>
           </p>
-          <%= link_to "Voir la fiche", opening_path(@analysis["white"]["opening_recommended_id"]), class: "opening-link" %>
+          <%= link_to "", opening_path(@analysis["white"]["opening_recommended_id"]), class: "opening-link" %>
         </div>
       </div>
       <div class="dash-opening-card">
         <div class="dash-card-top">
-          <%= image_tag "chess_pawn_icon_bleu", alt: "icone ouverture noirs 1.d4", class: "dash-card-logo" %>
+          <%= image_tag "pawn_bleu", alt: "icone ouverture noirs 1.d4", class: "dash-card-logo" %>
           <div class="dash-card-side">Avec les Noirs contre 1.d4</div>
         </div>
         <div class="dash-opening-desc">
@@ -94,12 +94,12 @@
           <p class="opening-desc">
             <%= @analysis["black_vs_d4"]["reason"] %>
           </p>
-            <%= link_to "Voir la fiche", opening_path(@analysis["black_vs_d4"]["opening_recommended_id"]), class: "opening-link" %>
+            <%= link_to "", opening_path(@analysis["black_vs_d4"]["opening_recommended_id"]), class: "opening-link" %>
         </div>
       </div>
       <div class="dash-opening-card">
         <div class="dash-card-top">
-          <%= image_tag "chess_pawn_icon_bleu", alt: "icone ouverture noirs 1.d4", class: "dash-card-logo" %>
+          <%= image_tag "pawn_bleu", alt: "icone ouverture noirs 1.d4", class: "dash-card-logo" %>
           <div class="dash-card-side">Avec les Noirs contre 1.e4</div>
         </div>
         <div class="dash-opening-desc">
@@ -112,7 +112,7 @@
           <p class="opening-desc">
             <%= @analysis["black_vs_e4"]["reason"] %>
           </p>
-            <%= link_to "Voir la fiche", opening_path(@analysis["black_vs_e4"]["opening_recommended_id"]), class: "opening-link" %>
+            <%= link_to "", opening_path(@analysis["black_vs_e4"]["opening_recommended_id"]), class: "opening-link" %>
         </div>
       </div>
     </div>

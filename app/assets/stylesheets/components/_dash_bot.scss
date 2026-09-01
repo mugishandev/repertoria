@@ -52,6 +52,7 @@ $move-list-color: #8ba3c7;
       gap: 2rem;
 
       .dash-opening-card {
+        position: relative;
         background-color: $dark-card-bg;
         color: #ffffff;
         border-radius: 20px;
@@ -60,10 +61,12 @@ $move-list-color: #8ba3c7;
         flex-direction: column;
         justify-content: space-between;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
 
         &:hover {
           transform: translateY(-4px);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
         }
 
         .dash-card-top {
@@ -144,27 +147,17 @@ $move-list-color: #8ba3c7;
           &:hover {
             text-decoration: underline;
           }
+
+          &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
         }
-
-        // .dash-opening-whento {
-        //   font-size: 0.85rem;
-        //   color: #9ca3af;
-        //   border-top: 1px solid rgba(255, 255, 255, 0.1);
-        //   padding-top: 1rem;
-
-        //   h4 {
-        //     color: $move-list-color;
-        //     font-size: 0.75rem;
-        //     font-weight: 700;
-        //     letter-spacing: 0.05em;
-        //     margin-bottom: 0.5rem;
-        //   }
-
-        //   .opening-desc {
-        //     margin-bottom: 1rem;
-        //     text-align: justify;
-        //   }
-        // }
+        }
       }
     }
   }
