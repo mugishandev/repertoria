@@ -1,0 +1,26 @@
+=> 
+{[31m[1m"[0m[31mwhite[0m[31m[1m"[0m=>
+  {[31m[1m"[0m[31mopening[0m[31m[1m"[0m=>[31m[1m"[0m[31mLe Système de Londres[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mstatus[0m[31m[1m"[0m=>[31m[1m"[0m[31mkeep[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mopening_recommended_id[0m[31m[1m"[0m=>[34m[1m12[0m,
+   [31m[1m"[0m[31mreason[0m[31m[1m"[0m=>
+    [31m[1m"[0m[31mTu as déjà joué le système de Londres de manière régulière et avec de bons résultats. Il correspond à ta pratique et à ton niveau, en étant simple à apprendre et facile à comprendre. C'est une ouverture solide pour ton niveau d'ELO.[0m[31m[1m"[0m,
+   [31m[1m"[0m[31msuite_de_coups[0m[31m[1m"[0m=>[31m[1m"[0m[31m1.d4 d5 2.Nf3 Nf6 3.Bf4 e6 4.e3 Bd6 5.Bg3 O-O 6.Bd3[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mopening_recommended[0m[31m[1m"[0m=>[31m[1m"[0m[31mLe Système de Londres[0m[31m[1m"[0m},
+ [31m[1m"[0m[31mblack_vs_e4[0m[31m[1m"[0m=>
+  {[31m[1m"[0m[31mopening[0m[31m[1m"[0m=>[31m[1m"[0m[31mLa Française[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mstatus[0m[31m[1m"[0m=>[31m[1m"[0m[31mkeep[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mopening_recommended_id[0m[31m[1m"[0m=>[34m[1m14[0m,
+   [31m[1m"[0m[31mreason[0m[31m[1m"[0m=>
+    [31m[1m"[0m[31mTu as utilisé la défense française plusieurs fois, avec des résultats corrects. Elle est cohérente avec ton style et ton niveau, offrant une structure solide et des plans faciles à maîtriser contre 1.e4.[0m[31m[1m"[0m,
+   [31m[1m"[0m[31msuite_de_coups[0m[31m[1m"[0m=>[31m[1m"[0m[31m1.e4 e6 2.d4 d5 3.Nc3 Nf6 4.e5 Nfd7 5.f4 c5 6.Nf3[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mopening_recommended[0m[31m[1m"[0m=>[31m[1m"[0m[31mLa Française[0m[31m[1m"[0m},
+ [31m[1m"[0m[31mblack_vs_d4[0m[31m[1m"[0m=>
+  {[31m[1m"[0m[31mopening[0m[31m[1m"[0m=>[31m[1m"[0m[31mLe Gambit Dame refusé[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mstatus[0m[31m[1m"[0m=>[31m[1m"[0m[31mkeep[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mopening_recommended_id[0m[31m[1m"[0m=>[34m[1m7[0m,
+   [31m[1m"[0m[31mreason[0m[31m[1m"[0m=>
+    [31m[1m"[0m[31mTu as une habitude à jouer le Gambit Dame refusé, et cela te réussit dans plusieurs parties. C'est une ouverture simple, fiable et adaptée à ton niveau, avec des plans faciles à comprendre.[0m[31m[1m"[0m,
+   [31m[1m"[0m[31msuite_de_coups[0m[31m[1m"[0m=>[31m[1m"[0m[31m1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Nf3 Be7 5.Bg5 O-O 6.e3[0m[31m[1m"[0m,
+   [31m[1m"[0m[31mopening_recommended[0m[31m[1m"[0m=>[31m[1m"[0m[31mLe Gambit Dame refusé[0m[31m[1m"[0m},
+ [31m[1m"[0m[31muser[0m[31m[1m"[0m=>{[31m[1m"[0m[31melo[0m[31m[1m"[0m=>[34m[1m367[0m, [31m[1m"[0m[31mtaux_de_victoire_white[0m[31m[1m"[0m=>[35m[1m53.85[0m, [31m[1m"[0m[31mtaux_de_victoire_black[0m[31m[1m"[0m=>[35m[1m54.17[0m}}

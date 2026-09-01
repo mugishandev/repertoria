@@ -111,7 +111,23 @@ N'y inclus pas la suite de coups.
 
 Utilise toujours le nom de l'ouverture recommandée dans l'explication. Ne l'invente pas.
 
+Pour chaque catégorie, opening_games doit contenir les URLs exactes
+des parties dans lesquelles tu considères que l'utilisateur a joué
+ou clairement tenté l'ouverture identifiée.
 
+La suite de coups a besoin d'être strictement identique et matcher avec la suite de coups de notre base de données.
+
+Utilise uniquement les URLs présentes dans les données games fournies.
+
+N'invente jamais une URL.
+
+Si aucune partie ne correspond, retourne :
+"opening_games": []
+
+Ne calcule pas le nombre de parties.
+Ne calcule pas le nombre de victoires.
+Ne calcule pas le taux de victoire.
+Ruby effectuera ces calculs.
 
 FORMAT
 
@@ -120,25 +136,34 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 {
 "white": {
 "opening": "nom de l'ouverture identifiée ou null",
+"opening_games": [],
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
-"reason": "Explication courte et personnalisée"
+"reason": "Explication courte et personnalisée",
 },
 "black_vs_e4": {
 "opening": "nom de l'ouverture identifiée ou null",
+"opening_games": [],
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
-"reason": "Explication courte et personnalisée"
+"reason": "Explication courte et personnalisée",
 },
 "black_vs_d4": {
 "opening": "nom de l'ouverture identifiée ou null",
+"opening_games": [],
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
-"reason": "Explication courte et personnalisée"
+"reason": "Explication courte et personnalisée",
 }
 }
 
 Si status = "new", opening doit être null.
+
+Pour un joueur débutant, une partie peut compter comme correspondant à une
+ouverture même si la séquence n'est pas parfaitement théorique, à condition
+que les premiers coups et la structure montrent clairement cette ouverture.
+
+Ne compte pas une partie si la ressemblance est trop faible ou ambiguë.
 
 opening_recommended_id doit toujours être un entier correspondant à un ID fourni dans la catégorie concernée.
 

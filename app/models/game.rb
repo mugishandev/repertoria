@@ -87,5 +87,32 @@ class Game < ApplicationRecord
     }
   end
 
-  
+  def self.opening_stats(games, username, opening_urls)
+    username = username.downcase
+
+    opening_games = games.select do |game|
+      opening_urls.include?(game["url"])
+    end
+
+    wins = opening_games.count do |game|
+      if game.dig("white", "username")&.downcase == username
+        game.dig("white", "result") == "win"
+      elsif game.dig("black", "username")&.downcase == username
+        game.dig("black", "result") == "win"
+      else
+        false
+      end
+    end
+
+    count = opening_games.count
+
+    win_rate =
+      count > 0 ? (wins.to_f / count * 100).round(1) : 0
+
+    @result1 = {
+      count: count,
+      wins: wins,
+      win_rate: win_rate
+    }
+  end
 end

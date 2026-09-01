@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'cgu', to: 'pages#cgu'
   get 'confidentials', to: 'pages#confidentials'
   get "/analyse", to: "pages#analyse"
+  get "/repertoire", to: "openings#repertoire", as: :repertoire
 
   resources :openings, only: [ :index, :show ] do
     member do
