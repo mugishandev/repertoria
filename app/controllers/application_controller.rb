@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # Clé unique du cache d'analyse pour l'utilisateur courant.
+  # Écriture : PagesController#analyse. Lecture : OpeningsController#index et #repertoire.
+  def analysis_cache_key
+    "analysis/#{current_user.chess_username}"
+  end
+
   def storable_location?
     request.get? &&
       is_navigational_format? &&
