@@ -56,3 +56,25 @@
   font-family: "Didact Gothic", sans-serif;
   color: #4b5563;
 }
+
+.explanation-card {
+  overflow: hidden;
+}
+
+.explanation-card-img {
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.explanation-card-move {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 10px;
+}
