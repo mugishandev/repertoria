@@ -1,19 +1,50 @@
 <% content_for(:page_title, "Mon répertoire") %>
-
-<h1>Mon répertoire</h1>
-
-<% @openings.each do |opening| %>
-  <section class="opening">
-    <h2><%= opening.name %></h2>
-
-    <p>
-      Nombre de parties :
-      <strong><%= @opening_counts[opening.id] || 0 %></strong>
-    </p>
-
-    <p>
-      Win rate :
-      <strong><%= @opening_win_rates[opening.id] || 0 %>%</strong>
-    </p>
-  </section>
-<% end %>
+<div class="repertory-container">
+  <div class="repertory-openings">
+    <div class="repertory-openings-title">
+      <h2>Mes ouvertures</h2>
+      <p>Sélectionnez une ouverture pour afficher vos statistiques affiliées.</p>
+    </div>
+    <div class="repertory-openings-cards">
+      <% @openings.each do |opening| %>
+        <section class="opening">
+          <div class="repertory-opening-card">
+            <div class="repertory-card-top">
+              <%= image_tag "knight_bleu", alt: "icone ouverture blancs", class: "dash-card-logo" %>
+              <div class="repertory-card-title">
+                <p><%= opening.color_fr %></p>
+                <h5><%= opening.name %></h5>
+              </div>
+            </div>
+            <div class="dash-opening-desc">
+              <h3 class="opening-title">
+              </h3>
+              <p class="move-list">
+                <%= opening.suite_de_coups %>
+              </p>
+            </div>
+          </div>
+        </section>
+      <% end %>
+    </div>
+  </div>
+  <div class="repertory-analyse">
+    <h2>Analyse de votre ouverture</h2>
+    <div class="analyse-data-top">
+      <div class="analyse-data-title"></div>
+      <div class="analyse-data-games"></div>
+    </div>
+    <div class="analyse-data-transcript"></div>
+  </div>
+  <div class="repertory-last-games">
+    <div class="last-games-title">
+    <h2>Vos dernières parties avec [Insérer nom de l'ouverture]</h2>
+    </div>
+    <div class="last-games-cards">
+      <div class="last-game-card">
+        <div class="games-card-details"></div>
+        <div class="games-card-misc"></div>
+      </div>
+    </div>
+  </div>
+</div>
