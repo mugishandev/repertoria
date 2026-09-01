@@ -140,6 +140,7 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
 "reason": "Explication courte et personnalisée",
+"reason_detailed": "Explication detaillées personnalisée",
 },
 "black_vs_e4": {
 "opening": "nom de l'ouverture identifiée ou null",
@@ -147,6 +148,7 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
 "reason": "Explication courte et personnalisée",
+"reason_detailed": "Explication detaillées personnalisée",
 },
 "black_vs_d4": {
 "opening": "nom de l'ouverture identifiée ou null",
@@ -154,8 +156,11 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
 "reason": "Explication courte et personnalisée",
+"reason_detailed": "Explication detaillées personnalisée",
 }
 }
+
+reason et reason_detailed doivent être en français et toujours liés l'un à l'autre.
 
 Si status = "new", opening doit être null.
 
