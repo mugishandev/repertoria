@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+  # before_action :authenticate_user!
   before_action :store_user_location!, if: :storable_location?
-  
+
   def after_sign_in_path_for(_resource)
     stored_location_for(:user) || root_path
   end
