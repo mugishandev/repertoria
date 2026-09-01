@@ -1,0 +1,19 @@
+<% content_for(:page_title, "Mon répertoire") %>
+
+<h1>Mon répertoire</h1>
+
+<% @openings.each do |opening| %>
+  <section class="opening">
+    <h2><%= opening.name %></h2>
+
+    <p>
+      Nombre de parties :
+      <strong><%= @opening_counts[opening.id] || 0 %></strong>
+    </p>
+
+    <p>
+      Win rate :
+      <strong><%= @opening_win_rates[opening.id] || 0 %>%</strong>
+    </p>
+  </section>
+<% end %>

@@ -20,7 +20,7 @@
 
     <div class="bottom">
       <form action="/analyse" method="get">
-        <input type="text" name="username" placeholder="Votre pseudo Chess.com">
+        <input type="text" name="username" placeholder="Votre pseudo Chess.com" value="<%= current_user.chess_username if user_signed_in? %>">
         <button>Analyser mon répertoire</button>
       </form>
     </div>
