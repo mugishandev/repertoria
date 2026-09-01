@@ -4,7 +4,8 @@
     <!-- 1. SECTION GAUCHE : Logo + Nom de l'app -->
     <%= link_to root_path, class: "navbar-brand d-flex align-items-center gap-2" do %>
       <div class="navbar-logo">
-        <span class="logo-icon">♟</span>
+        <!-- <span class="logo-icon">♟</span> -->
+        <%= image_tag "couronne-du-roi-dorée.png", alt: "logo repertoria couronne du roi dorée", class: "navbar-logo navbar-logo-img" %>
       </div>
       <span class="brand-title">Repertoria</span>
     <% end %>
@@ -30,7 +31,8 @@
 
             <a href="#" class="avatar-link" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="user-avatar">
-                <span class="avatar-icon">♛</span>
+                <!-- <span class="avatar-icon">♛</span> -->
+                <%= image_tag "couronne-du-roi-bleu.png", alt: "avatar de l'utilisateur", class: "user-avatar navbar-logo-img" %>
               </div>
             </a>
 
@@ -44,8 +46,8 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Se connecter", new_user_session_path, data: { turbo: false } %>
-            <%= link_to "S'inscrire", new_user_registration_path %>
+            <%= link_to "Se connecter", new_user_session_path, data: { turbo: false }, class: "btn login-btn" %>
+            <%= link_to "S'inscrire", new_user_registration_path, class: "btn login-btn" %>
           </li>
         <% end %>
       </ul>

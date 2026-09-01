@@ -1,3 +1,5 @@
+$accent-gold: #E8B84E;
+
 .home-page {
   display: flex;
   min-height: 100vh;
@@ -44,17 +46,17 @@
 
 .logo-icon {
   width: 95px;
-  height: 85px;
+  height: 95px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 3px solid #e8b63e;
+  border: 3px solid $accent-gold;
   border-radius: 25px;
 
   background: #151936;
-  color: #e8b63e;
+  color: $accent-gold;
   font-size: 45px;
 }
 
@@ -62,7 +64,9 @@
   margin: 5px 0 0;
   color: #151936;
   font-size: 35px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
+  font-family: Garamond, serif;
+  text-transform: uppercase;
 }
 
 .logo p {
@@ -73,9 +77,10 @@
 }
 
 .tagline {
-  margin-top: 90px;
+  margin-top: 4em;
   color: #52627a;
   font-size: 18px;
+  margin-bottom: 1.5rem;
 }
 
 .separator {
@@ -83,22 +88,23 @@
   color: #52627a;
   font-size: 18px;
 
-  background: #e8b63e;
+  background: $accent-gold;
 }
 
 .quote {
-  font-family: Georgia, serif;
+  font-family: Garamond, serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 26px;
   color: #263653;
-  border-top: 3px solid #e8b63e;
-  border-bottom: 3px solid #e8b63e;
+  border-top: 3px solid $accent-gold;
+  border-bottom: 3px solid $accent-gold;
   padding: 20px;
 }
 
 .bottom form {
   display: flex;
   gap: 12px;
+  margin-top: 1em;
 }
 
 .bottom input,
@@ -116,8 +122,9 @@
 .bottom button {
   width: 205px;
   border: none;
-  background: #edba43;
+  background: $accent-gold;
   font-weight: bold;
+  color: $dark-card-bg;
 }
 
 .disclaimer {

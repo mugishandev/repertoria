@@ -1,27 +1,24 @@
 <%= turbo_frame_tag "opening_tab_content" do %>
   <div class="tab-pane">
-    <h3>Ressources Externes</h3>
-    <!-- <p><%#= @opening.resources %></p> -->
-    <% if @opening.video_url.present? %>
-      <%= link_to @opening.video_url, target: "_blank", rel: "noopener" do %>
-        <%= image_tag "https://img.youtube.com/vi/#{@opening.video_url.split("v=").last}/hqdefault.jpg" %>
-      <% end %>
-    <% end %>
     <div class="resources-container">
       <div class="resources-desc">
-        <h2>Titre</h2>
-        <p>Du texte, c'est hilarant.</p>
+        <!-- Titre ou description si besoin -->
       </div>
+
+      <!-- Conteneur du carrousel -->
       <div class="resources-cards">
+        <%# Exemple si tu as plusieurs vidéos à boucler %>
         <div class="resources-card">
-          <div class="resources-card">
-            <div class="resources-card-vid">♦</div>
-            <div class="resources-card-info">
-              <p>Titre de la vidéo</p>
-            </div>
+          <div class="resources-card-vid">
+            <% if @opening.video_url.present? %>
+              <%= link_to @opening.video_url, target: "_blank", rel: "noopener" do %>
+                <%= image_tag "https://img.youtube.com/vi/#{@opening.video_url.split("v=").last}/hqdefault.jpg", alt: "Image de la vidéo", class: "card-vid-img" %>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 <% end %>
