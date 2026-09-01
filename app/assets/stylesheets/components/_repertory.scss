@@ -1,0 +1,157 @@
+.repertory-container {
+  padding: 1.5rem;
+  background-color: #F6F4EE;
+  h2{
+    font-family: Garamond, serif;
+    font-weight: bold;
+    color: $dark-card-bg;
+  }
+
+}
+
+.repertory-openings {
+
+}
+
+.repertory-openings-title {
+
+  p{
+    font-family: "Didact Gothic", sans-serif;
+    color: $gray-text;
+  }
+}
+
+.repertory-openings-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+
+  .repertory-opening-card {
+    position: relative;
+    background-color: $dark-card-bg;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .repertory-card-top {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      // margin-bottom: 1.5rem;
+
+      .dash-card-logo {
+        width: 40px;
+        height: 40px;
+        background-color: $accent-gold;
+        color: $dark-card-bg;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 4px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .repertory-card-title {
+        margin-left: 1em;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+        // padding: 0.35rem 0.75rem;
+        // font-weight: 500;
+
+        p{
+          font-size: 0.75rem;
+          color: $gray-text;
+          font-family: "Didact Gothic", sans-serif;
+          margin-bottom: 0.5em;
+        }
+
+        h5{
+          font-family: Garamond, serif;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .dash-opening-desc {
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #d1d5db;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      .opening-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        font-family: Garamond, serif;
+        align-items: start;
+      }
+
+      .move-list {
+        color: $move-list-color;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+
+      .opening-desc {
+        color: #9ca3af;
+        text-align: justify;
+      }
+    }
+
+    .opening-link {
+      color: $accent-gold;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      // align-items: center;
+      gap: 0.25rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+    }
+  }
+
+  .repertory-analyse {
+    margin-bottom: 2rem;
+    background-color: white;
+    border: 2px solid $gray-text;
+  }
+
+}

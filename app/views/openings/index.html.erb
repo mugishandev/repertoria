@@ -30,20 +30,26 @@
           <div class="dash-stats-card">
             <div class="stats-header">
               <p>Avec les Blancs</p>
-              <h5 class="stat-blancs">
-                <%= @winrate["white"] %>%
+              <h5>
+                <%= tag.span("#{@winrate['white']}%", class: "stat-number #{winrate_color_class(@winrate['white'], prefix: 'text--')}") %>
+                <div class="progress-bar">
+                  <div class="progress <%= winrate_color_class(@winrate['white']) %>" style="width: <%= @winrate['white'] %>%"></div>
+                </div>
               </h5>
             </div>
-            <div class="progress-container">
-              <div class="progress-fill" style="width: 58%;">
-              </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-fill" style="width: 58%;">
             </div>
           </div>
           <div class="dash-stats-card">
             <div class="stats-header">
               <p>Avec les Noirs</p>
               <h5 class="stat-noirs">
-                <%= @winrate["black"] %>%
+                <%= tag.span("#{@winrate['black']}%", class: "stat-number #{winrate_color_class(@winrate['black'], prefix: 'text--')}") %>
+                <div class="progress-bar">
+                  <div class="progress <%= winrate_color_class(@winrate['black']) %>" style="width: <%= @winrate['black'] %>%"></div>
+                </div>
               </h5>
             </div>
             <div class="progress-container">
@@ -51,6 +57,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
   </div>
