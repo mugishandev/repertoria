@@ -5,59 +5,57 @@
       <h2>Mes ouvertures</h2>
       <p>Sélectionnez une ouverture pour afficher vos statistiques affiliées.</p>
     </div>
-    <div class="repertory-openings-cards">
-
-        <section class="opening">
-          <div class="repertory-opening-card">
-            <div class="repertory-card-top">
-              <%= image_tag "knight_bleu", alt: "icone ouverture blancs", class: "repertory-card-logo" %>
-              <div class="repertory-card-title">
-                <p> Avec les Blancs </p>
-                <h5><%= @analysis["white"]["opening_recommended"] %></h5>
-              </div>
-            </div>
-            <div class="repertory-opening-desc">
-              <h3 class="opening-title">
-              </h3>
-              <p class="move-list">
-                <%= @analysis["white"]["suite_de_coups"] %>
-              </p>
+    <div>
+      <section class="opening repertory-openings-cards">
+        <div class="repertory-opening-card">
+          <div class="repertory-card-top">
+            <%= image_tag "knight_bleu", alt: "icone ouverture blancs", class: "repertory-card-logo" %>
+            <div class="repertory-card-title">
+              <p> Avec les Blancs </p>
+              <h5><%= @analysis["white"]["opening_recommended"] %></h5>
             </div>
           </div>
-          <div class="repertory-opening-card">
-            <div class="repertory-card-top">
-              <%= image_tag "pawn_bleu", alt: "icone ouverture blancs", class: "repertory-card-logo" %>
-              <div class="repertory-card-title">
-                <p> Avec les Noirs contre 1.d4 </p>
-                <h5><%= @analysis["black_vs_d4"]["opening_recommended"] %></h5>
-              </div>
-            </div>
-            <div class="repertory-opening-desc">
-              <h3 class="opening-title">
-              </h3>
-              <p class="move-list">
-                <%= @analysis["black_vs_d4"]["suite_de_coups"] %>
-              </p>
+          <div class="repertory-opening-desc">
+            <h3 class="opening-title">
+            </h3>
+            <p class="move-list">
+              <%= @analysis["white"]["suite_de_coups"] %>
+            </p>
+          </div>
+        </div>
+        <div class="repertory-opening-card">
+          <div class="repertory-card-top">
+            <%= image_tag "pawn_bleu", alt: "icone ouverture blancs", class: "repertory-card-logo" %>
+            <div class="repertory-card-title">
+              <p> Avec les Noirs contre 1.d4 </p>
+              <h5><%= @analysis["black_vs_d4"]["opening_recommended"] %></h5>
             </div>
           </div>
-          <div class="repertory-opening-card">
-            <div class="repertory-card-top">
-              <%= image_tag "pawn_bleu", alt: "icone ouverture blancs", class: "repertory-card-logo" %>
-              <div class="repertory-card-title">
-                <p> Avec les Noirs contre 1.e4 </p>
-                <h5><%= @analysis["black_vs_e4"]["opening_recommended"] %></h5>
-              </div>
-            </div>
-            <div class="repertory-opening-desc">
-              <h3 class="opening-title">
-              </h3>
-              <p class="move-list">
-                <%= @analysis["black_vs_e4"]["suite_de_coups"] %>
-              </p>
+          <div class="repertory-opening-desc">
+            <h3 class="opening-title">
+            </h3>
+            <p class="move-list">
+              <%= @analysis["black_vs_d4"]["suite_de_coups"] %>
+            </p>
+          </div>
+        </div>
+        <div class="repertory-opening-card">
+          <div class="repertory-card-top">
+            <%= image_tag "pawn_bleu", alt: "icone ouverture blancs", class: "repertory-card-logo" %>
+            <div class="repertory-card-title">
+              <p> Avec les Noirs contre 1.e4 </p>
+              <h5><%= @analysis["black_vs_e4"]["opening_recommended"] %></h5>
             </div>
           </div>
-        </section>
-
+          <div class="repertory-opening-desc">
+            <h3 class="opening-title">
+            </h3>
+            <p class="move-list">
+              <%= @analysis["black_vs_e4"]["suite_de_coups"] %>
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
   <div class="repertory-analyse">
@@ -67,7 +65,12 @@
         <div class="analyse-data-title">
           <h4>Nom Ouverture Séléctionnée</h4>
           <p>Ton bilan avec cette ouverture</p>
-
+          <h5 class="stats-winrate">
+            <%= tag.span("#{@winrate['white']}%", class: "stat-number #{winrate_color_class(@winrate['white'], prefix: 'text--')}") %>
+            <div class="progress-bar">
+              <div class="progress <%= winrate_color_class(@winrate['white']) %>" style="width: <%= @winrate['white'] %>%"></div>
+            </div>
+          </h5>
         </div>
         <div class="analyse-data-games">
           <p><strong>X </strong>parties jouées</p>
@@ -85,8 +88,11 @@
     </div>
     <div class="last-games-cards">
       <div class="last-game-card">
-        <div class="games-card-details"></div>
-        <div class="games-card-misc"></div>
+        <div class="games-card-details">
+          <h5> Player 1 vs Player 2</h5>
+          <p><strong>Victoire</strong></p>
+          <p>Date - X coups</p>
+        </div>
       </div>
     </div>
   </div>
