@@ -30,12 +30,21 @@
   </div>
   <div class="repertory-analyse">
     <h2>Analyse de votre ouverture</h2>
-     <%= @analysis["black_vs_d4"]["reason_detailed"] %>
-    <div class="analyse-data-top">
-      <div class="analyse-data-title"></div>
-      <div class="analyse-data-games"></div>
-    </div>
-    <div class="analyse-data-transcript">
+    <div class="analyse-data">
+      <div class="analyse-data-top">
+        <div class="analyse-data-title">
+          <h4>Nom Ouverture Séléctionnée</h4>
+          <p>Ton bilan avec cette ouverture</p>
+
+        </div>
+        <div class="analyse-data-games">
+          <p><strong>X </strong>parties jouées</p>
+        </div>
+      </div>
+      <div class="analyse-data-transcript">
+        <h5>ton analyse</h5>
+        <p><%= @analysis["black_vs_d4"]["reason_detailed"] %></p>
+      </div>
     </div>
   </div>
   <div class="repertory-last-games">

@@ -155,3 +155,45 @@
   }
 
 }
+
+.repertory-analyse {
+  .analyse-data {
+    background-color: #fff;
+    border-width: 1px;
+    margin-bottom: 2em;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+
+    .analyse-data-top{
+      display: flex;
+
+      .analyse-data-title {
+        
+      }
+
+      .analyse-data-games {
+
+      }
+    }
+  }
+  .analyse-data-transcript {
+
+  }
+}
+
+.repertory-last-games {
+  .last-games-title {
+
+  }
+  .last-games-cards {
+    .last-games-card {
+      .games-card-details {
+
+      }
+      .games-card-misc {
+
+      }
+    }
+  }
+}
