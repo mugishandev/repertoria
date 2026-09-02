@@ -21,6 +21,9 @@
             <p class="move-list">
               <%= @analysis["white"]["suite_de_coups"] %>
             </p>
+            <%= link_to "", repertoire_white_path(@opening),
+            # class: "link #{'active' if current_page?(white_opening_path(@opening)) || current_page?(opening_path(@opening))}",
+            data: { turbo_frame: "opening_color_content", turbo_action: "advance" }, class: "opening-link" %>
           </div>
         </div>
         <div class="repertory-opening-card">
@@ -37,6 +40,9 @@
             <p class="move-list">
               <%= @analysis["black_vs_d4"]["suite_de_coups"] %>
             </p>
+            <%= link_to "", repertoire_black_vs_d4_path(@opening),
+            # class: "link #{'active' if current_page?(white_opening_path(@opening)) || current_page?(opening_path(@opening))}",
+            data: { turbo_frame: "opening_color_content", turbo_action: "advance" }, class: "opening-link" %>
           </div>
         </div>
         <div class="repertory-opening-card">
@@ -53,6 +59,9 @@
             <p class="move-list">
               <%= @analysis["black_vs_e4"]["suite_de_coups"] %>
             </p>
+            <%= link_to "", repertoire_black_vs_e4_path(@opening),
+            # class: "link #{'active' if current_page?(white_opening_path(@opening)) || current_page?(opening_path(@opening))}",
+            data: { turbo_frame: "opening_color_content", turbo_action: "advance" }, class: "opening-link" %>
           </div>
         </div>
       </section>
@@ -78,7 +87,6 @@
       </div>
       <div class="analyse-data-transcript">
         <h5>ton analyse</h5>
-        <p><%= @analysis["black_vs_d4"]["reason_detailed"] %></p>
       </div>
     </div>
   </div>

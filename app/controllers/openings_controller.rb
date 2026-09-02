@@ -1,6 +1,6 @@
 class OpeningsController < ApplicationController
   before_action :authenticate_user!, only: %i[index repertoire]
-  before_action :load_last_analysis, only: %i[index repertoire]
+  before_action :load_last_analysis, only: %i[index repertoire white black_vs_d4 black_vs_e4]
   before_action :set_opening, only: [
     :show,
     :description,
@@ -43,6 +43,18 @@ class OpeningsController < ApplicationController
 
   def tab_content
     render partial: "tab_content"
+  end
+
+  def white
+    render partial: "white"
+  end
+
+  def black_vs_d4
+    render partial: "black_vs_d4"
+  end
+
+  def black_vs_e4
+    render partial: "black_vs_e4"
   end
 
   private
