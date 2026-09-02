@@ -1,8 +1,15 @@
+h1, h2, h3, h4, h5 {
+font-family: Garamond, serif;
+}
+
+p {
+  font-family: "Didact Gothic", sans-serif;
+}
+
 .repertory-container {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #F6F4EE;
   h2{
     font-family: Garamond, serif;
     font-weight: bold;
@@ -206,6 +213,7 @@
           margin-bottom: 1em;
           font-weight: bolder;
           letter-spacing: .08em;
+          font-family: "Didact Gothic", sans-serif;
           .text--low { color: #e74c3c; }
           .text--medium { color: #f39c12; }
           .text--high { color: #2ecc71; }

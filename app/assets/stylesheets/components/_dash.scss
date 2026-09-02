@@ -9,9 +9,16 @@ $accent-gold: #f59e0b;
 $border-color: #e5e7eb;
 
 .dashboard {
-  font-family: system-ui, -apple-system, sans-serif;
   padding: 2rem;
   color: $primary-text;
   max-width: 1200px;
   margin: 0 auto;
+
+  h1, h2, h3, h4, h5 {
+  font-family: Garamond, serif;
+  }
+
+  p {
+    font-family: "Didact Gothic", sans-serif;
+  }
 }
