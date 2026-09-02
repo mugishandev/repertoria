@@ -155,8 +155,8 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 "opening_games": [],
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
-"reason": "Explication courte et personnalisée",
-"reason_detailed": "Explication detaillées personnalisée",
+"reason": "Explication courte et personnalisée en une phrase percutante, maximum 15 mots",
+"reason_detailed": "Explication detaillée personnalisée en au moins trois phrases, minimum 60 mots",
 }
 }
 
