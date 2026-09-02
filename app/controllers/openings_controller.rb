@@ -18,6 +18,11 @@ class OpeningsController < ApplicationController
   # et relues depuis le cache. Display only — aucun appel Chess.com ni LLM.
   def repertoire
     @openings = Opening.all
+    # if @opening.color == "white"
+    #   @analysis_key = "white"
+    # else
+    #   @analysis_key = "black_vs_#{@opening.against}"
+    # end
   end
 
   def show
