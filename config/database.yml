@@ -88,12 +88,16 @@ production:
   primary:
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
+    pool: 3
   cache:
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
+    pool: 3
   queue:
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
+    pool: 3
   cable:
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
+    pool: 3
