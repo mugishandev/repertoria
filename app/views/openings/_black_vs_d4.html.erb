@@ -8,7 +8,7 @@
 
         <div class="analyse-data-title">
           <h4>
-            <%= @analysis[@analysis_key]["opening"] %>
+            <%= link_to "#{@analysis[@analysis_key]["opening"]}", opening_path(@analysis["black_vs_d4"]["opening_recommended_id"]), data: {turbo_frame: "_top"}, class: "link-repertory" %>
           </h4>
 
           <p>Ton bilan avec cette ouverture</p>
