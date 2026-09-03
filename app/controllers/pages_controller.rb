@@ -31,7 +31,7 @@ class PagesController < ApplicationController
       return
     end
 
-    games = Game.fetch_from_chess_com(username, 50)
+    games = Game.fetch_from_chess_com(username, 100)
 
     if games.empty?
       redirect_to root_path, alert: "Le joueur « #{username} » n'existe pas sur Chess.com..."
@@ -45,11 +45,12 @@ class PagesController < ApplicationController
 
     elo      = Game.player_elo(username)
     winrate  = Game.win_rates(games, username).stringify_keys
-    analysis = DataAnalyzer.new.call(games, elo, winrate)
+    analysis = DataAnalyzer.new.call(games, elo, winrate, username)
     opening_counts, opening_win_rates = opening_stats_for(games, username, analysis)
 
     Rails.cache.write(analysis_cache_key, {
       analysis: analysis,
+      games: games,
       games_count: games.count,
       winrate: winrate,
       elo: elo,

@@ -82,6 +82,28 @@ class OpeningsController < ApplicationController
     @last_update       = cached[:last_update]
     @opening_counts    = cached[:opening_counts] || {}
     @opening_win_rates = cached[:opening_win_rates] || {}
+    @games             = cached[:games] || []
+
+    @analysis_key =
+      if %w[white black_vs_e4 black_vs_d4].include?(action_name)
+        action_name
+      else
+        "white"
+      end
+    opening_urls = @analysis.dig(@analysis_key, "opening_games") || []
+
+    @opening_stats = Game.opening_stats(
+      @games,
+      @username,
+      opening_urls
+    )
+    puts "=== OPENING STATS ==="
+    puts @opening_stats.inspect
+    @last_games = Game.opening_games(@games, opening_urls).first(3)
+
+    @opening = Opening.find_by(
+      name: @analysis.dig(@analysis_key, "opening")
+    )
   end
 
   def set_opening

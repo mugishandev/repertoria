@@ -44,6 +44,16 @@ Ne recommande pas automatiquement l'ouverture la plus connue ou la plus simple.
 
 À niveau ELO identique, deux joueurs ayant des habitudes différentes peuvent recevoir des recommandations différentes.
 
+IMPORTANT :
+Analyse toutes les parties présentes dans games.
+
+Pour opening_games, retourne toutes les URLs des parties correspondant
+raisonnablement à l'ouverture identifiée.
+
+Ne retourne pas seulement les parties les plus représentatives ou quelques exemples.
+
+Il n'y a aucune limite au nombre d'URLs dans opening_games.
+
 
 
 DÉCISION
@@ -112,10 +122,20 @@ N'y inclus pas la suite de coups.
 Utilise toujours le nom de l'ouverture recommandée dans l'explication. Ne l'invente pas.
 
 Pour chaque catégorie, opening_games doit contenir les URLs exactes
-des parties dans lesquelles tu considères que l'utilisateur a joué
-ou clairement tenté l'ouverture identifiée.
+des parties dans lesquelles l'ouverture identifiée a été jouée ou clairement tentée.
 
-La suite de coups a besoin d'être strictement identique et matcher avec la suite de coups de notre base de données.
+Pour identifier ces parties, analyse les premiers coups réellement joués
+et compare-les aux suites de coups des ouvertures fournies.
+
+Pour un joueur débutant, accepte une partie même si la suite de coups
+n'est pas parfaitement théorique, dès lors que les premiers coups
+permettent d'identifier clairement l'ouverture.
+
+Ne sois pas excessivement strict : une déviation après les premiers coups
+caractéristiques de l'ouverture ne doit pas exclure automatiquement la partie.
+
+Retourne toutes les parties qui correspondent raisonnablement à
+l'ouverture identifiée, sans limiter leur nombre.
 
 Utilise uniquement les URLs présentes dans les données games fournies.
 
@@ -127,7 +147,9 @@ Si aucune partie ne correspond, retourne :
 Ne calcule pas le nombre de parties.
 Ne calcule pas le nombre de victoires.
 Ne calcule pas le taux de victoire.
-Ruby effectuera ces calculs.
+Ruby effectuera ces vérifications et calculs.
+
+
 
 FORMAT
 
@@ -140,7 +162,7 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
 "reason": "Explication courte et personnalisée",
-"reason_detailed": "Explication detaillées personnalisée",
+"reason_detailed": "Explication detaillées personnalisée"
 },
 "black_vs_e4": {
 "opening": "nom de l'ouverture identifiée ou null",
@@ -148,7 +170,7 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
 "reason": "Explication courte et personnalisée",
-"reason_detailed": "Explication detaillées personnalisée",
+"reason_detailed": "Explication detaillées personnalisée"
 },
 "black_vs_d4": {
 "opening": "nom de l'ouverture identifiée ou null",
@@ -156,11 +178,11 @@ Retourne UNIQUEMENT un JSON valide avec exactement cette structure :
 "status": "status recommandé",
 "opening_recommended_id": "id de l'ouverture recommandée",
 "reason": "Explication courte et personnalisée en une phrase percutante, maximum 15 mots",
-"reason_detailed": "Explication detaillée personnalisée en au moins trois phrases, minimum 60 mots",
+"reason_detailed": "Explication detaillée personnalisée en au moins trois phrases, minimum 60 mots"
 }
 }
 
-reason et reason_detailed doivent être en français et toujours liés l'un à l'autre.
+reason et reason_detailed doivent être en français et toujours liés l'un à l'autre, et liés à "opening": "nom de l'ouverture identifiée ou null".
 
 Si status = "new", opening doit être null.
 
@@ -188,7 +210,7 @@ class DataAnalyzer < ApplicationRecord
     #   @games = Game.fetch_from_chess_com("mjnk")
     # end
 
-  def call(games, elo, winrate)
+  def call(games, elo, winrate, username)
     chat = RubyLLM.chat
 
     openings = {
@@ -221,7 +243,8 @@ class DataAnalyzer < ApplicationRecord
       elo: elo,
       winrate: winrate,
       games: games,
-      openings: openings
+      openings: openings,
+      username: username
     }
 
     response = chat
@@ -236,6 +259,25 @@ class DataAnalyzer < ApplicationRecord
       opening = Opening.find(opening_id)
       analysis[category]["suite_de_coups"] = opening.suite_de_coups
       analysis[category]["opening_recommended"] = opening.name
+      urls = analysis[category]["opening_games"] || []
+      analysis[category]["opening_games"] = urls.select do |url|
+
+          # On retrouve la partie complète grâce à son URL
+        game = games.find do |game|
+          game["url"] == url
+        end
+
+        next false unless game
+
+        # White = le user doit être Blanc
+        if category == "white"
+          game.dig("white", "username")&.downcase == username.downcase
+
+        # Les deux autres catégories = le user doit être Noir
+        else
+          game.dig("black", "username")&.downcase == username.downcase
+        end
+      end
     end
 
     # On ajoute les données fiables calculées par Ruby
