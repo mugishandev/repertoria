@@ -1,13 +1,13 @@
 module ApplicationHelper
-  def winrate_color_class(winrate, prefix: 'progress--')
+  def winrate_color_class(winrate, prefix: "progress--")
     rate = winrate.to_f
 
     suffix = if rate < 25
-               'low'
+               "low"
              elsif rate <= 49
-               'medium'
+               "medium"
              else
-               'high'
+               "high"
              end
 
     "#{prefix}#{suffix}"

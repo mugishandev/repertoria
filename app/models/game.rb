@@ -6,7 +6,7 @@ class Game < ApplicationRecord
   belongs_to :user
 
   # Récupère les dernières parties RAPID du joueur
-  def self.fetch_from_chess_com(username, limit = 50)
+  def self.fetch_from_chess_com(username, limit = 100)
     archives_url = URI(
       "https://api.chess.com/pub/player/#{username}/games/archives"
     )
@@ -87,12 +87,16 @@ class Game < ApplicationRecord
     }
   end
 
+  def self.opening_games(games, opening_urls)
+    games.select do |game|
+      opening_urls.include?(game["url"])
+    end
+  end
+
   def self.opening_stats(games, username, opening_urls)
     username = username.downcase
 
-    opening_games = games.select do |game|
-      opening_urls.include?(game["url"])
-    end
+    opening_games = opening_games(games, opening_urls)
 
     wins = opening_games.count do |game|
       if game.dig("white", "username")&.downcase == username
@@ -109,10 +113,26 @@ class Game < ApplicationRecord
     win_rate =
       count > 0 ? (wins.to_f / count * 100).round(1) : 0
 
-    @result1 = {
+    {
       count: count,
       wins: wins,
       win_rate: win_rate
     }
+  end
+
+  def self.result_fr(result)
+    {
+      "checkmated" => "Défaite par échec et mat",
+      "win" => "Victoire",
+      "stalemate" => "Pat",
+      "abandoned" => "Défaite par abandon",
+      "resigned" => "Défaite par abandon",
+      "timeout" => "Défaite par temps écoulé",
+      "insufficient" => "Nulle par manque de matériel",
+      "agreed" => "Accord mutuel",
+      "50move" => "Règle des 50 coups",
+      "repetition" => "Nulle par répetition",
+      "timevsinsufficient" => "Nulle par manque de matériel"
+    }[result]
   end
 end
