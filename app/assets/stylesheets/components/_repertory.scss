@@ -318,3 +318,14 @@ p {
     }
   }
 }
+
+.link {
+  text-decoration: none;
+  background-color: $dark-card-bg;
+  color: $accent-gold;
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  margin-left: 0.5rem;
+  font-family: "Didact Gothic", sans-serif;
+}
