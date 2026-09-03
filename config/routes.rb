@@ -13,6 +13,13 @@ Rails.application.routes.draw do
   get 'confidentials', to: 'pages#confidentials'
   get "/analyse", to: "pages#analyse"
 
+  get "/repertoire", to: "openings#repertoire", as: :repertoire
+  get "/repertoire/white", to: "openings#white"
+  get "/repertoire/black_vs_d4", to: "openings#black_vs_d4"
+  get "/repertoire/black_vs_e4", to: "openings#black_vs_e4"
+
+
+
   resources :openings, only: [ :index, :show ] do
     member do
       get :description

@@ -12,6 +12,7 @@
   <div class="dash-top ">
       <div class="dash-profil">
         <div class="dash-profil-logo">
+          <%= image_tag "couronne-du-roi-bleu.png", alt: "avatar de l'utilisateur", class: "dash-profil-logo " %>
         </div>
         <div class="dash-profil-info">
           <p class="profil-info-title">Votre Profil</p>
@@ -22,55 +23,63 @@
              ELO - Chess.com
              <strong><%= @elo %></strong>
           </p>
-          <div class="dash-profil-analyse row">
+          <div class="dash-profil-analyse">
               <p>Parties analysées
                 <strong>
                   <%= @games_count %>
                 </strong>
               </p>
-              <p>Mise à jour <strong><%= @last_update.strftime("%d %B %Y %H:%M") if @last_update.present? %></strong></p>
+              <p>Mise à jour <strong><%= @last_update.strftime("%d %b %Y") if @last_update.present? %></strong></p>
           </div>
         </div>
       </div>
       <div class="dash-stats">
+        <p class="profil-info-title">Taux de victoires</p>
         <div class="dash-stats-cards">
-          <p class="profil-info-title">Taux de victoire:</p>
-          <div class="stats-header">
-            <p>Avec les Blancs</p>
-            <h5 class="stat-blancs">
-              <%= @winrate["white"] %>%
-            </h5>
+          <div class="dash-stats-card">
+            <div class="stats-header">
+              <p>Avec les Blancs</p>
+              <h5>
+                <%= tag.span("#{@winrate['white']}%", class: "stat-number #{winrate_color_class(@winrate['white'], prefix: 'text--')}") %>
+                <div class="progress-bar">
+                  <div class="progress <%= winrate_color_class(@winrate['white']) %>" style="width: <%= @winrate['white'] %>%"></div>
+                </div>
+              </h5>
+            </div>
           </div>
           <div class="progress-container">
             <div class="progress-fill" style="width: 58%;">
             </div>
           </div>
-        </div>
-        <div class="dash-stats-cards">
-          <div class="stats-header">
-            <p>Avec les Noirs</p>
-            <h5 class="stat-noirs">
-              <%= @winrate["black"] %>%
-            </h5>
-          </div>
-          <div class="progress-container">
-            <div class="progress-fill" style="width: 41%;">
+          <div class="dash-stats-card">
+            <div class="stats-header">
+              <p>Avec les Noirs</p>
+              <h5 class="stat-noirs">
+                <%= tag.span("#{@winrate['black']}%", class: "stat-number #{winrate_color_class(@winrate['black'], prefix: 'text--')}") %>
+                <div class="progress-bar">
+                  <div class="progress <%= winrate_color_class(@winrate['black']) %>" style="width: <%= @winrate['black'] %>%"></div>
+                </div>
+              </h5>
+            </div>
+            <div class="progress-container">
+              <div class="progress-fill" style="width: 41%;">
+              </div>
             </div>
           </div>
         </div>
+        </div>
       </div>
-  </div>
   <div class="dash-bot">
     <div class="dash-bot-reco">
-      <h3 class="reco-openings">Vos 3 ouvertures recommandées</h3>
-      <p class="reco-text">Tenez-vous-en à ces trois ouvertures : une avec les Blancs, deux avec les Noirs. Ajoutez celles que vous voulez travailler à <a href="">mon répertoire</a>.</p>
+      <h3 class="reco-openings">Tes 3 ouvertures recommandées</h3>
+      <p class="reco-text">Concentre toi sur ces trois ouvertures : une avec les Blancs, deux avec les Noirs. Retrouves les pour les travailler dans <%= link_to "mon répertoire", repertoire_path %>.</p>
     </div>
     <div class="dash-bot-cards">
 
       <div class="dash-opening-card">
         <div class="dash-card-top">
-          <div class="dash-card-logo">♠</div>
-          <div class="dash-card-side">Avec les blancs</div>
+          <%= image_tag "knight_bleu", alt: "icone ouverture blancs", class: "dash-card-logo" %>
+          <div class="dash-card-side">Avec les Blancs</div>
         </div>
         <div class="dash-opening-desc">
           <h3 class="opening-title">
@@ -82,17 +91,13 @@
           <p class="opening-desc">
             <%= @analysis["white"]["reason"] %>
           </p>
-        </div>
-        <div class="dash-opening-whento">
-          <h4>QUAND LA JOUER</h4>
-          <p class="opening-desc">Joue cette ouverture quand tu joues les blancs.</p>
-          <%= link_to "Voir la fiche", opening_path(@analysis["white"]["opening_recommended_id"]) %>
+          <%= link_to "", opening_path(@analysis["white"]["opening_recommended_id"]), class: "opening-link" %>
         </div>
       </div>
       <div class="dash-opening-card">
         <div class="dash-card-top">
-          <div class="dash-card-logo">♠</div>
-          <div class="dash-card-side">Avec les noirs</div>
+          <%= image_tag "pawn_bleu", alt: "icone ouverture noirs 1.d4", class: "dash-card-logo" %>
+          <div class="dash-card-side">Avec les Noirs contre 1.d4</div>
         </div>
         <div class="dash-opening-desc">
           <h3 class="opening-title">
@@ -104,17 +109,13 @@
           <p class="opening-desc">
             <%= @analysis["black_vs_d4"]["reason"] %>
           </p>
-        </div>
-        <div class="dash-opening-whento">
-          <h4>QUAND LA JOUER</h4>
-          <p class="opening-desc">Quand ton adversaire joue d4.</p>
-            <%= link_to "Voir la fiche", opening_path(@analysis["black_vs_d4"]["opening_recommended_id"]) %>
+            <%= link_to "", opening_path(@analysis["black_vs_d4"]["opening_recommended_id"]), class: "opening-link" %>
         </div>
       </div>
       <div class="dash-opening-card">
         <div class="dash-card-top">
-          <div class="dash-card-logo">♠</div>
-          <div class="dash-card-side">Avec les noirs</div>
+          <%= image_tag "pawn_bleu", alt: "icone ouverture noirs 1.d4", class: "dash-card-logo" %>
+          <div class="dash-card-side">Avec les Noirs contre 1.e4</div>
         </div>
         <div class="dash-opening-desc">
           <h3 class="opening-title">
@@ -126,13 +127,7 @@
           <p class="opening-desc">
             <%= @analysis["black_vs_e4"]["reason"] %>
           </p>
-        </div>
-        <div class="dash-opening-whento">
-          <h4>QUAND LA JOUER</h4>
-          <p class="opening-desc">
-            Quand ton adversaire joue e4.
-          </p>
-            <%= link_to "Voir la fiche", opening_path(@analysis["black_vs_e4"]["opening_recommended_id"]) %>
+            <%= link_to "", opening_path(@analysis["black_vs_e4"]["opening_recommended_id"]), class: "opening-link" %>
         </div>
       </div>
     </div>

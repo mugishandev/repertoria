@@ -1,17 +1,20 @@
 .explanation-container {
-  background-color: #faf8f3;
-  flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .explanation-desc h2 {
-  font-family: "Georgia", serif;
-  font-size: 1.6em;
+  font-size: 1.6em;  color: $dark-card-bg;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
 }
 
 .explanation-desc p {
   font-family: "Didact Gothic", sans-serif;
-  color: #4b5563;
+  color: $dark-card-bg;
 }
 
 .explanation-cards {
@@ -36,8 +39,8 @@
   align-items: center;
 }
 .explanation-card-move-name {
-  font-family: "Georgia", serif;
   font-size: 1.2em;
+  color: $dark-card-bg;
 }
 .explanation-card-step {
   font-family: "Didact Gothic", sans-serif;
@@ -47,12 +50,55 @@
 }
 .explanation-card-img {
   border: solid #faf8f3 2px;
-  background-color: #13182a;
-  height: 250px;
+  height: auto;
+  width: 100%;
   border-radius: 10px;
   margin-bottom: 0.8em;
 }
 .explanation-card-move{
   font-family: "Didact Gothic", sans-serif;
-  color: #4b5563;
+  color: $dark-card-bg;
+}
+
+.explanation-card {
+  overflow: hidden;
+}
+
+.explanation-card-img {
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.explanation-card-move {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 10px;
+}
+
+.explanation-card-vid {
+  background-color: $dark-card-bg;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  width: 350px;
+
+  .explanation-vid-name {
+  font-size: 1.2em;
+  color: $accent-gold;
+  }
+
+  .explanation-vid-text{
+  font-family: "Didact Gothic", sans-serif;
+  color: $white;
+  }
 }

@@ -1,27 +1,73 @@
 <%= turbo_frame_tag "opening_tab_content" do %>
   <div class="tab-pane">
-    <!-- <p><%#= @opening.explanation %></p> -->
     <div class="explanation-container">
+
       <div class="explanation-desc">
         <h2>Coup par coup</h2>
-        <p>Suivez les diagrammes dans l'ordre pour retenir la construction de l'ouverture.</p>
+        <p>
+          Suivez les diagrammes dans l'ordre pour retenir la construction de l'ouverture.
+        </p>
       </div>
+
       <div class="explanation-cards">
-        <div class="explanation-card">
-          <div class="explanation-card-top">
-            <div class="explanation-card-move-name">
-              <p>Nom Mouvement</p>
+
+        <% @opening[:explications].each_with_index do |explication, index| %>
+
+          <div class="explanation-card">
+
+            <div class="explanation-card-top">
+
+              <div class="explanation-card-move-name">
+                <p>Coup <%= index + 1 %></p>
+              </div>
+
+              <div class="explanation-card-step">
+                <p><%= index + 1 %>/<%= @opening[:explications].length %></p>
+              </div>
+
             </div>
-            <div class="explanation-card-step">
-              <p>1/5</p>
+
+            <div class="explanation-card-img">
+              <%= image_tag explication["image"] %>
             </div>
+
+            <div class="explanation-card-move">
+              <p><%= explication["description"] %></p>
+            </div>
+
           </div>
-          <div class="explanation-card-img">♦</div>
-          <div class="explanation-card-move">
-            <p>Du texte !!!</p>
+
+        <% end %>
+        <div class="explanation-card-vid">
+          <div class="explanation-vid-name">
+            <p>Pour aller plus loin</p>
+          </div>
+          <div class="explanation-card-img">
+            <% if @opening.video_url.present? %>
+              <%= link_to @opening.video_url, target: "_blank", rel: "noopener" do %>
+                <%= image_tag "https://img.youtube.com/vi/#{@opening.video_url.split("v=").last}/hqdefault.jpg", alt: "Image de la vidéo", class: "card-vid-img" %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="explanation-vid-text">
+            <p>Voici une video qui t'expliquera en détail l'ouverture.</p>
           </div>
         </div>
       </div>
+
     </div>
   </div>
+  <div class="tab-pane">
+      <div class="resources-container">
+        <div class="resources-desc">
+          <!-- Titre ou description si besoin -->
+        </div>
+
+        <!-- Conteneur du carrousel -->
+        <div class="resources-cards">
+          <%# Exemple si tu as plusieurs vidéos à boucler %>
+        </div>
+
+      </div>
+    </div>
 <% end %>

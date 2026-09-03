@@ -1,0 +1,42 @@
+<%= turbo_frame_tag "opening_color_content" do %>
+  <div class="repertory-analyse">
+    <h2>Analyse de votre ouverture</h2>
+    <div class="analyse-data">
+      <div class="analyse-data-top">
+        <div class="analyse-data-title">
+          <h4>Nom Ouverture Séléctionnée</h4>
+          <p>Ton bilan avec cette ouverture</p>
+          <h5 class="stats-winrate">
+            <%= tag.span("#{@winrate['white']}%", class: "stat-number #{winrate_color_class(@winrate['white'], prefix: 'text--')}") %>
+            <div class="progress-bar">
+              <div class="progress <%= winrate_color_class(@winrate['white']) %>" style="width: <%= @winrate['white'] %>%"></div>
+            </div>
+          </h5>
+        </div>
+        <div class="analyse-data-games">
+          <p><strong>X </strong>parties jouées</p>
+        </div>
+      </div>
+      <div class="analyse-data-transcript">
+        <h5>ton analyse</h5>
+        <p><%= @analysis["black_vs_d4"]["reason_detailed"] %></p>
+      </div>
+    </div>
+  </div>
+  <div class="repertory-last-games">
+    <div class="last-games-title">
+      <h2>
+          Vos dernières parties avec
+      </h2>
+    </div>
+    <div class="last-games-cards">
+      <div class="last-game-card">
+        <div class="games-card-details">
+          <h5> Player 1 vs Player 2</h5>
+          <p><strong>Victoire</strong></p>
+          <p>Date - X coups</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
       </div>
 
       <div class="opening-banner-details">
-        <div class="dash-card-logo">♠</div>
+        <%= image_tag "knight_bleu", alt: "icone ouverture blancs", class: "dash-card-logo" %>
         <div class="opening-title">
           <h2>
             <%= @opening.name %>
@@ -21,19 +21,19 @@
         </div>
       </div>
 
-      <div class="opening-banner-tab">
+      <div class="opening-banner-tab" data-controller="tabs">
         <%# Onglet actif si on est sur la description OU sur la vue show de base %>
         <%= link_to "Description", description_opening_path(@opening),
             class: "link #{'active' if current_page?(description_opening_path(@opening)) || current_page?(opening_path(@opening))}",
-            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance", tabs_target: "link", action: "click->tabs#select" } %>
 
         <%= link_to "Explications", explanation_opening_path(@opening),
             class: "link #{'active' if current_page?(explanation_opening_path(@opening))}",
-            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
+            data: { turbo_frame: "opening_tab_content", turbo_action: "advance", tabs_target: "link", action: "click->tabs#select" } %>
 
-        <%= link_to "Ressources", resources_opening_path(@opening),
-            class: "link #{'active' if current_page?(resources_opening_path(@opening))}",
-            data: { turbo_frame: "opening_tab_content", turbo_action: "advance" } %>
+        <%#= link_to "Ressources", resources_opening_path(@opening),
+            # class: "link #{'active' if current_page?(resources_opening_path(@opening))}",
+            # data: { turbo_frame: "opening_tab_content", turbo_action: "advance", tabs_target: "link", action: "click->tabs#select" } %>
       </div>
     </div>
 

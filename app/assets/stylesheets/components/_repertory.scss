@@ -1,0 +1,320 @@
+h1, h2, h3, h4, h5 {
+font-family: Garamond, serif;
+}
+
+p {
+  font-family: "Didact Gothic", sans-serif;
+}
+
+.repertory-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  h2{
+    font-family: Garamond, serif;
+    font-weight: bold;
+    color: $dark-card-bg;
+    margin-bottom: 1rem;
+  }
+
+}
+
+.repertory-openings {
+
+}
+
+.repertory-openings-title {
+
+  p{
+    font-family: "Didact Gothic", sans-serif;
+    color: $gray-text;
+  }
+}
+
+.repertory-openings-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+
+  .repertory-opening-card {
+    position: relative;
+    background-color: $dark-card-bg;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .opening-link {
+      color: $accent-gold;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      // align-items: center;
+      gap: 0.25rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      }
+    }
+
+    .repertory-card-top {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      // margin-bottom: 1.5rem;
+
+      .repertory-card-logo {
+        width: 40px;
+        height: 40px;
+        background-color: $accent-gold;
+        color: $dark-card-bg;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 4px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .repertory-card-title {
+        margin-left: 1em;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.75rem;
+        // padding: 0.35rem 0.75rem;
+        // font-weight: 500;
+
+        p{
+          font-size: 0.75rem;
+          color: $gray-text;
+          font-family: "Didact Gothic", sans-serif;
+          margin-bottom: 0.5em;
+        }
+
+        h5{
+          font-family: Garamond, serif;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .repertory-opening-desc {
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #d1d5db;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      .opening-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        font-family: Garamond, serif;
+        align-items: start;
+      }
+
+      .move-list {
+        color: $move-list-color;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+
+      .opening-desc {
+        color: #9ca3af;
+        text-align: justify;
+      }
+    }
+
+    .opening-link {
+      color: $accent-gold;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      // align-items: center;
+      gap: 0.25rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.repertory-analyse {
+    .analyse-data {
+    background-color: #fff;
+    border-width: 1px;
+    margin-bottom: 2em;
+    border-radius: 20px;
+    padding: 1.4rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    .analyse-data-top{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px $gray-text;
+      margin-bottom: 1em;
+
+      h4 {
+        font-family: Garamond, serif;
+        color: $dark-card-bg;
+        font-size: 1.5rem;
+      }
+
+      .analyse-data-title {
+        p {
+          font-family: "Didact Gothic", sans-serif;
+          color: $gray-text;
+        }
+
+        .stats-winrate {
+          margin-bottom: 1em;
+          font-weight: bolder;
+          letter-spacing: .08em;
+          font-family: "Didact Gothic", sans-serif;
+          .text--low { color: #e74c3c; }
+          .text--medium { color: #f39c12; }
+          .text--high { color: #2ecc71; }
+        }
+
+        .progress-bar {
+          width: 100%;
+          height: 8px;
+          background: #eee;
+          border-radius: 8px;
+          margin-top: 0.5rem;
+          overflow: hidden;
+        }
+
+        .progress {
+          height: 100%;
+          transition: width 0.4s ease;
+        }
+
+        /* Couleurs selon la tranche */
+        .progress--low {
+          background: #e74c3c;
+          color: #e74c3c; /* Rouge */
+        }
+
+        .progress--medium {
+          background: #f39c12;
+          color:  #f39c12; /* Orange */
+        }
+
+        .progress--high {
+          background: #2ecc71; /* Vert */
+          color: #2ecc71;
+        }
+
+        .stat-number {
+          // font-weight: 600;
+        }
+      }
+
+      .analyse-data-games {
+        p {
+          font-family: "Didact Gothic", sans-serif;
+          color: $gray-text;
+          font-size: 1.1rem;
+
+          strong {
+            color: $dark-card-bg;
+          }
+        }
+      }
+    }
+  }
+  .analyse-data-transcript {
+    h5 {
+      font-family: "Didact Gothic", sans-serif;
+      text-transform: uppercase;
+      font-size: small;
+      letter-spacing: .16em;
+      color: $gray-text;
+    }
+
+    p {
+      font-family: "Didact Gothic", sans-serif;
+      color: $dark-card-bg;
+      text-align: justify;
+    }
+  }
+}
+
+.repertory-last-games {
+  .last-games-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .last-game-card {
+      position: relative;
+      background-color: #fff;
+      color: $dark-card-bg;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 350px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+      .games-card-details {
+        h5 {
+          font-family: Garamond, serif;
+          color: $dark-card-bg;
+        }
+
+        p {
+          font-family: "Didact Gothic", sans-serif;
+          color: $gray-text;
+        }
+
+      }
+      .games-card-misc {
+
+      }
+    }
+  }
+}

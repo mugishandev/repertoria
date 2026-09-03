@@ -1,0 +1,135 @@
+.repertory-analyse {
+    .analyse-data {
+    background-color: #fff;
+    border-width: 1px;
+    margin-bottom: 2em;
+    border-radius: 20px;
+    padding: 1.4rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    .analyse-data-top{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px $gray-text;
+      margin-bottom: 1em;
+
+      h4 {
+        font-family: Garamond, serif;
+        color: $dark-card-bg;
+        font-size: 1.5rem;
+      }
+
+      .analyse-data-title {
+        p {
+          font-family: "Didact Gothic", sans-serif;
+          color: $gray-text;
+        }
+
+        .stats-winrate {
+          margin-bottom: 1em;
+          font-weight: bolder;
+          letter-spacing: .08em;
+          .text--low { color: #e74c3c; }
+          .text--medium { color: #f39c12; }
+          .text--high { color: #2ecc71; }
+        }
+
+        .progress-bar {
+          width: 100%;
+          height: 8px;
+          background: #eee;
+          border-radius: 8px;
+          margin-top: 0.5rem;
+          overflow: hidden;
+        }
+
+        .progress {
+          height: 100%;
+          transition: width 0.4s ease;
+        }
+
+        /* Couleurs selon la tranche */
+        .progress--low {
+          background: #e74c3c;
+          color: #e74c3c; /* Rouge */
+        }
+
+        .progress--medium {
+          background: #f39c12;
+          color:  #f39c12; /* Orange */
+        }
+
+        .progress--high {
+          background: #2ecc71; /* Vert */
+          color: #2ecc71;
+        }
+
+        .stat-number {
+          // font-weight: 600;
+        }
+      }
+
+      .analyse-data-games {
+        p {
+          font-family: "Didact Gothic", sans-serif;
+          color: $gray-text;
+          font-size: 1.1rem;
+
+          strong {
+            color: $dark-card-bg;
+          }
+        }
+      }
+    }
+  }
+  .analyse-data-transcript {
+    h5 {
+      font-family: "Didact Gothic", sans-serif;
+      text-transform: uppercase;
+      font-size: small;
+      letter-spacing: .16em;
+      color: $gray-text;
+    }
+
+    p {
+      font-family: "Didact Gothic", sans-serif;
+      color: $dark-card-bg;
+      text-align: justify;
+    }
+  }
+}
+
+.repertory-last-games {
+  .last-games-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .last-game-card {
+      position: relative;
+      background-color: #fff;
+      color: $dark-card-bg;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 350px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+      .games-card-details {
+        h5 {
+          font-family: Garamond, serif;
+          color: $dark-card-bg;
+        }
+
+        p {
+          font-family: "Didact Gothic", sans-serif;
+          color: $gray-text;
+        }
+
+      }
+      .games-card-misc {
+
+      }
+    }
+  }
+}
