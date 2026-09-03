@@ -18,6 +18,14 @@ $accent-gold: #E8B84E;
   background-repeat: repeat;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: Garamond, serif;
+}
+
+p {
+  font-family: "Didact Gothic", sans-serif;
+}
+
 .flou-gradient {
   width: 700px;
   min-height: 650px;
@@ -65,14 +73,13 @@ $accent-gold: #E8B84E;
   color: #151936;
   font-size: 35px;
   letter-spacing: 4px;
-  font-family: Garamond, serif;
   text-transform: uppercase;
 }
 
 .logo p {
   margin: 5px 0 0;
   color: #9b8060;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 5px;
 }
 
@@ -125,6 +132,7 @@ $accent-gold: #E8B84E;
   background: $accent-gold;
   font-weight: bold;
   color: $dark-card-bg;
+  font-family: "Didact Gothic", sans-serif;
 }
 
 .disclaimer {

@@ -4,7 +4,7 @@ $accent-gold: #E8B84E;
 $dark-card-bg: #13182a;
 
 .tab-pane {
-  background-color: #F6F4EE;
+  // background-color: #F6F4EE;
   font-family: "Didact Gothic", sans-serif;
   color: #2C3E50;
   padding: 2rem;
@@ -55,6 +55,7 @@ $dark-card-bg: #13182a;
     font-size: 1.5rem;
     margin-bottom: 1.25rem;
     font-weight: 600;
+    color: $dark-card-bg;
 
     @media (max-width: $breakpoint-mobile) {
       font-size: 1.25rem;
@@ -71,6 +72,7 @@ $dark-card-bg: #13182a;
     line-height: 1.6;
     margin-bottom: 1.25rem;
     font-size: 1.1rem;
+    color: $dark-card-bg;
 
     &:last-child {
       margin-bottom: 0;
@@ -94,7 +96,6 @@ $dark-card-bg: #13182a;
 
       p {
         margin: 0;
-        font-family: Georgia, serif;
         font-weight: 500;
         font-family: "Didact Gothic", sans-serif;
       }
@@ -158,6 +159,7 @@ $dark-card-bg: #13182a;
     padding: 1.5rem 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     font-family: "Didact Gothic", sans-serif;
+    color: $dark-card-bg;
     font-size: 1.1rem;
 
     @media (max-width: $breakpoint-mobile) {

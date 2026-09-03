@@ -38,7 +38,21 @@
           </div>
 
         <% end %>
-
+        <div class="explanation-card-vid">
+          <div class="explanation-vid-name">
+            <p>Pour aller plus loin</p>
+          </div>
+          <div class="explanation-card-img">
+            <% if @opening.video_url.present? %>
+              <%= link_to @opening.video_url, target: "_blank", rel: "noopener" do %>
+                <%= image_tag "https://img.youtube.com/vi/#{@opening.video_url.split("v=").last}/hqdefault.jpg", alt: "Image de la vidéo", class: "card-vid-img" %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="explanation-vid-text">
+            <p>Voici une video qui t'expliquera en détail l'ouverture.</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -52,15 +66,6 @@
         <!-- Conteneur du carrousel -->
         <div class="resources-cards">
           <%# Exemple si tu as plusieurs vidéos à boucler %>
-          <div class="resources-card">
-            <div class="resources-card-vid">
-              <% if @opening.video_url.present? %>
-                <%= link_to @opening.video_url, target: "_blank", rel: "noopener" do %>
-                  <%= image_tag "https://img.youtube.com/vi/#{@opening.video_url.split("v=").last}/hqdefault.jpg", alt: "Image de la vidéo", class: "card-vid-img" %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
         </div>
 
       </div>
