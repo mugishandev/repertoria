@@ -6,7 +6,7 @@ class Game < ApplicationRecord
   belongs_to :user
 
   # Récupère les dernières parties RAPID du joueur
-  def self.fetch_from_chess_com(username, limit = 100)
+  def self.fetch_from_chess_com(username, limit = 50)
     archives_url = URI(
       "https://api.chess.com/pub/player/#{username}/games/archives"
     )

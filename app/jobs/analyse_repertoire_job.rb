@@ -11,7 +11,7 @@ class AnalyseRepertoireJob < ApplicationJob
     username = user.chess_username
     return if username.blank?
 
-    games = Game.fetch_from_chess_com(username, 100)
+    games = Game.fetch_from_chess_com(username, 50)
 
     if games.empty?
       write_status(username, "error", "Le joueur « #{username} » n'existe pas sur Chess.com...")
