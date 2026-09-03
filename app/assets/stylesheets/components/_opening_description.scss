@@ -3,6 +3,11 @@ $breakpoint-mobile: 600px;
 $accent-gold: #E8B84E;
 $dark-card-bg: #13182a;
 
+
+.description {
+  white-space: pre-line;
+}
+
 .tab-pane {
   // background-color: #F6F4EE;
   font-family: "Didact Gothic", sans-serif;
