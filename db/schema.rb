@@ -42,7 +42,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_03_115350) do
     t.text "description"
     t.json "explications"
     t.text "gendesc"
-    t.text "gendescription"
     t.string "image"
     t.string "logo"
     t.string "name"
