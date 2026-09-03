@@ -1,0 +1,30 @@
+#loader {
+  position: fixed;
+  inset: 0; /* Équivalent de top:0, left:0, right:0, bottom:0 */
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Toujours au-dessus du reste */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* La classe qui masquera le loader avec une transition fluide */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Animation d'exemple pour le spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #333;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

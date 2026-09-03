@@ -27,6 +27,11 @@
   <body><%= render "shared/navbar" %>
 <%= render "shared/flashes" %>
 
+  <!-- Loader présent partout mais masqué par défaut -->
+  <div id="loader" class="hidden">
+    <div class="spinner"></div>
+  </div>
+
     <%= yield %>
   </body>
 </html>
